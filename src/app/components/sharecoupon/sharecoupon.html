@@ -1,0 +1,777 @@
+<div class="container">
+    <section>
+        <div class="container">
+            <div class="row top_hder topup">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="logo">
+                        <img ng-src="{{sharecoupon.business_logo ? sharecoupon.business_logo :'img/logo_blue.png'}}">
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-8 col-xs-12">
+                    <div class="get_one">
+                        <h1><span>{{sharecoupon.camp_data.business_name?sharecoupon.camp_data.business_name:sharecoupon.camp_data.cp_name}} </span></h1>
+                        <h3><strong>Special Offer Valid :</strong> {{sharecoupon.getDateFormally(sharecoupon.camp_data.start_date)}} To {{sharecoupon.getDateFormally(sharecoupon.camp_data.end_date)}}</h3>
+                    </div>
+                </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row top_hder middle_content_CUPON">
+                <div class="col-md-4 col-sm-4 col-xs-12">
+                    <div class="center_textAlign middle_content_CUPON_left ">
+                        <p class="left_textAlign"  ><span>How to Activate :</span></p>
+                        <p class="text_cupn left_textAlign"><a>Click on "Facebook" button and share on facebook</a></p>
+
+                        <p class="text_cupn" ng-if="!sharecoupon.coupon_data"><a href ng-click="sharecoupon.onFacebook()"><img src="img/facebookicon.png"></a></p>
+                    </div>
+                </div>
+                <div class="col-md-8 col-sm-8">
+                    <div class="middle_content_CUPON_right">
+                        <p><span>OFFERS</span> : <span class="INNER_SAPN" ng-if="sharecoupon.camp_data.discount_type=='price'">${{sharecoupon.camp_data.discount_amount}} OFF</span>
+                        <span class="INNER_SAPN" ng-if="sharecoupon.camp_data.discount_type=='percent'">{{sharecoupon.camp_data.discount_amount}}% OFF</span>
+                        <span class="INNER_SAPN" ng-if="sharecoupon.camp_data.discount_type=='buy_1_get_1'">Buy {{sharecoupon.camp_data.buy_value}} Get {{sharecoupon.camp_data.get_value}}</span>
+                        <span class="INNER_SAPN" ng-if="sharecoupon.camp_data.discount_type=='free_item'">Free Item</span>
+                        <span class="INNER_SAPN" ng-if="sharecoupon.camp_data.business_type != 'default'">ON {{sharecoupon.camp_data.business_type}}</span>
+                        <span class="INNER_SAPN" ng-if="sharecoupon.camp_data.business_type == 'default'">ON PURCHASE</span></p>
+                    </div>
+                    <div class="middle_content_CUPON_right">
+                        <p class="fifty"><span>Code</span> : {{sharecoupon.coupon_data.c_code?sharecoupon.coupon_data.c_code:"XXXXXX"}}</p>
+                        <p class="fifty"><span>Status</span> : {{sharecoupon.coupon_data.status?sharecoupon.coupon_data.status:"Not Activated"}}</p>
+                    </div>
+                    <div class="middle_content_CUPON_right">
+                        <p ng-if="sharecoupon.camp_data.redeemable_at=='location'"><span>Redeemable At </span>
+                            <!-- : www.google.com -->: {{sharecoupon.camp_data.business_address}},{{sharecoupon.camp_data.city}},{{sharecoupon.camp_data.state}}</p>
+                        <p ng-if="sharecoupon.camp_data.redeemable_at=='online'"><span>Redeemable At </span>
+                            <!-- : www.google.com -->: {{sharecoupon.camp_data.web_address}}</p>
+                    </div>
+                </div>
+            </div>
+    </section>
+    <section>
+        <div class="container">
+            <div class="row top_hder middle_content_CUPON">
+                <div class="col-md-6 col-sm-6 col-sm-12">
+                    <div class="terms">
+                        <p><span>Disclaimer :</span>{{sharecoupon.camp_data.cp_disclaimer}}</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-6 col-sm-12">
+                    <div class="terms">
+                        <p><span>Additional Text :</span>{{sharecoupon.camp_data.cp_additional_text}}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="row">
+        <div class="col-md-12 col-sm-12 text-center" ng-if="sharecoupon.coupon_data && !sharecoupon.sendAs">
+            <div class="through">
+                <h4>Get coupon through</h4>
+            </div>
+            <div class="butn">
+                <button type="button" ng-click="sharecoupon.sendAs='contact'">Text Message</button>
+                <button type="button" ng-click="sharecoupon.sendAs='email'">Email</button>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12 text-center" ng-if="sharecoupon.sendAs=='contact'">
+            <div class="submit_btn">
+                <form name="contact_form">
+                    <select name="countryCode" ng-model="sharecoupon.countryCode">
+                        <option value="+213">Algeria (+213)</option>
+                        <option value="+376">Andorra (+376)</option>
+                        <option value="+244">Angola (+244)</option>
+                        <option value="+1264">Anguilla (+1264)</option>
+                        <option value="+1268">Antigua &amp; Barbuda (+1268)</option>
+                        <option value="+54">Argentina (+54)</option>
+                        <option value="+374">Armenia (+374)</option>
+                        <option value="+297">Aruba (+297)</option>
+                        <option value="+61">Australia (+61)</option>
+                        <option value="+43">Austria (+43)</option>
+                        <option value="+994">Azerbaijan (+994)</option>
+                        <option value="+1242">Bahamas (+1242)</option>
+                        <option value="+973">Bahrain (+973)</option>
+                        <option value="+880">Bangladesh (+880)</option>
+                        <option value="+1246">Barbados (+1246)</option>
+                        <option value="+375">Belarus (+375)</option>
+                        <option value="+32">Belgium (+32)</option>
+                        <option value="+501">Belize (+501)</option>
+                        <option value="+229">Benin (+229)</option>
+                        <option value="+1441">Bermuda (+1441)</option>
+                        <option value="+975">Bhutan (+975)</option>
+                        <option value="+591">Bolivia (+591)</option>
+                        <option value="+387">Bosnia Herzegovina (+387)</option>
+                        <option value="+267">Botswana (+267)</option>
+                        <option value="+55">Brazil (+55)</option>
+                        <option value="+673">Brunei (+673)</option>
+                        <option value="+359">Bulgaria (+359)</option>
+                        <option value="+226">Burkina Faso (+226)</option>
+                        <option value="+257">Burundi (+257)</option>
+                        <option value="+855">Cambodia (+855)</option>
+                        <option value="+237">Cameroon (+237)</option>
+                        <option value="+238">Cape Verde Islands (+238)</option>
+                        <option value="+1345">Cayman Islands (+1345)</option>
+                        <option value="+236">Central African Republic (+236)</option>
+                        <option value="+56">Chile (+56)</option>
+                        <option value="+86">China (+86)</option>
+                        <option value="+57">Colombia (+57)</option>
+                        <option value="+269">Comoros (+269)</option>
+                        <option value="+242">Congo (+242)</option>
+                        <option value="+682">Cook Islands (+682)</option>
+                        <option value="+506">Costa Rica (+506)</option>
+                        <option value="+385">Croatia (+385)</option>
+                        <option value="+53">Cuba (+53)</option>
+                        <option value="+90392">Cyprus North (+90392)</option>
+                        <option value="+357">Cyprus South (+357)</option>
+                        <option value="+42">Czech Republic (+42)</option>
+                        <option value="+45">Denmark (+45)</option>
+                        <option value="+253">Djibouti (+253)</option>
+                        <option value="+1809">Dominica (+1809)</option>
+                        <option value="+1809">Dominican Republic (+1809)</option>
+                        <option value="+593">Ecuador (+593)</option>
+                        <option value="+20">Egypt (+20)</option>
+                        <option value="+503">El Salvador (+503)</option>
+                        <option value="+240">Equatorial Guinea (+240)</option>
+                        <option value="+291">Eritrea (+291)</option>
+                        <option value="+372">Estonia (+372)</option>
+                        <option value="+251">Ethiopia (+251)</option>
+                        <option value="+500">Falkland Islands (+500)</option>
+                        <option value="+298">Faroe Islands (+298)</option>
+                        <option value="+679">Fiji (+679)</option>
+                        <option value="+358">Finland (+358)</option>
+                        <option value="+33">France (+33)</option>
+                        <option value="+594">French Guiana (+594)</option>
+                        <option value="+689">French Polynesia (+689)</option>
+                        <option value="+241">Gabon (+241)</option>
+                        <option value="+220">Gambia (+220)</option>
+                        <option value="+7880">Georgia (+7880)</option>
+                        <option value="+49">Germany (+49)</option>
+                        <option value="+233">Ghana (+233)</option>
+                        <option value="+350">Gibraltar (+350)</option>
+                        <option value="+30">Greece (+30)</option>
+                        <option value="+299">Greenland (+299)</option>
+                        <option value="+1473">Grenada (+1473)</option>
+                        <option value="+590">Guadeloupe (+590)</option>
+                        <option value="+671">Guam (+671)</option>
+                        <option value="+502">Guatemala (+502)</option>
+                        <option value="+224">Guinea (+224)</option>
+                        <option value="+245">Guinea - Bissau (+245)</option>
+                        <option value="+592">Guyana (+592)</option>
+                        <option value="+509">Haiti (+509)</option>
+                        <option value="+504">Honduras (+504)</option>
+                        <option value="+852">Hong Kong (+852)</option>
+                        <option value="+36">Hungary (+36)</option>
+                        <option value="+354">Iceland (+354)</option>
+                        <option value="+91">India (+91)</option>
+                        <option value="+62">Indonesia (+62)</option>
+                        <option value="+98">Iran (+98)</option>
+                        <option value="+964">Iraq (+964)</option>
+                        <option value="+353">Ireland (+353)</option>
+                        <option value="+972">Israel (+972)</option>
+                        <option value="+39">Italy (+39)</option>
+                        <option value="+1876">Jamaica (+1876)</option>
+                        <option value="+81">Japan (+81)</option>
+                        <option value="+962">Jordan (+962)</option>
+                        <option value="+7">Kazakhstan (+7)</option>
+                        <option value="+254">Kenya (+254)</option>
+                        <option value="+686">Kiribati (+686)</option>
+                        <option value="+850">Korea North (+850)</option>
+                        <option value="+82">Korea South (+82)</option>
+                        <option value="+965">Kuwait (+965)</option>
+                        <option value="+996">Kyrgyzstan (+996)</option>
+                        <option value="+856">Laos (+856)</option>
+                        <option value="+371">Latvia (+371)</option>
+                        <option value="+961">Lebanon (+961)</option>
+                        <option value="+266">Lesotho (+266)</option>
+                        <option value="+231">Liberia (+231)</option>
+                        <option value="+218">Libya (+218)</option>
+                        <option value="+417">Liechtenstein (+417)</option>
+                        <option value="+370">Lithuania (+370)</option>
+                        <option value="+352">Luxembourg (+352)</option>
+                        <option value="+853">Macao (+853)</option>
+                        <option value="+389">Macedonia (+389)</option>
+                        <option value="+261">Madagascar (+261)</option>
+                        <option value="+265">Malawi (+265)</option>
+                        <option value="+60">Malaysia (+60)</option>
+                        <option value="+960">Maldives (+960)</option>
+                        <option value="+223">Mali (+223)</option>
+                        <option value="+356">Malta (+356)</option>
+                        <option value="+692">Marshall Islands (+692)</option>
+                        <option value="+596">Martinique (+596)</option>
+                        <option value="+222">Mauritania (+222)</option>
+                        <option value="+269">Mayotte (+269)</option>
+                        <option value="+52">Mexico (+52)</option>
+                        <option value="+691">Micronesia (+691)</option>
+                        <option value="+373">Moldova (+373)</option>
+                        <option value="+377">Monaco (+377)</option>
+                        <option value="+976">Mongolia (+976)</option>
+                        <option value="+1664">Montserrat (+1664)</option>
+                        <option value="+212">Morocco (+212)</option>
+                        <option value="+258">Mozambique (+258)</option>
+                        <option value="+95">Myanmar (+95)</option>
+                        <option value="+264">Namibia (+264)</option>
+                        <option value="+674">Nauru (+674)</option>
+                        <option value="+977">Nepal (+977)</option>
+                        <option value="+31">Netherlands (+31)</option>
+                        <option value="+687">New Caledonia (+687)</option>
+                        <option value="+64">New Zealand (+64)</option>
+                        <option value="+505">Nicaragua (+505)</option>
+                        <option value="+227">Niger (+227)</option>
+                        <option value="+234">Nigeria (+234)</option>
+                        <option value="+683">Niue (+683)</option>
+                        <option value="+672">Norfolk Islands (+672)</option>
+                        <option value="+670">Northern Marianas (+670)</option>
+                        <option value="+47">Norway (+47)</option>
+                        <option value="+968">Oman (+968)</option>
+                        <option value="+680">Palau (+680)</option>
+                        <option value="+507">Panama (+507)</option>
+                        <option value="+675">Papua New Guinea (+675)</option>
+                        <option value="+595">Paraguay (+595)</option>
+                        <option value="+51">Peru (+51)</option>
+                        <option value="+63">Philippines (+63)</option>
+                        <option value="+48">Poland (+48)</option>
+                        <option value="+351">Portugal (+351)</option>
+                        <option value="+1787">Puerto Rico (+1787)</option>
+                        <option value="+974">Qatar (+974)</option>
+                        <option value="+262">Reunion (+262)</option>
+                        <option value="+40">Romania (+40)</option>
+                        <option value="+7">Russia (+7)</option>
+                        <option value="+250">Rwanda (+250)</option>
+                        <option value="+378">San Marino (+378)</option>
+                        <option value="+239">Sao Tome &amp; Principe (+239)</option>
+                        <option value="+966">Saudi Arabia (+966)</option>
+                        <option value="+221">Senegal (+221)</option>
+                        <option value="+381">Serbia (+381)</option>
+                        <option value="+248">Seychelles (+248)</option>
+                        <option value="+232">Sierra Leone (+232)</option>
+                        <option value="+65">Singapore (+65)</option>
+                        <option value="+421">Slovak Republic (+421)</option>
+                        <option value="+386">Slovenia (+386)</option>
+                        <option value="+677">Solomon Islands (+677)</option>
+                        <option value="+252">Somalia (+252)</option>
+                        <option value="+27">South Africa (+27)</option>
+                        <option value="+34">Spain (+34)</option>
+                        <option value="+94">Sri Lanka (+94)</option>
+                        <option value="+290">St. Helena (+290)</option>
+                        <option value="+1869">St. Kitts (+1869)</option>
+                        <option value="+1758">St. Lucia (+1758)</option>
+                        <option value="+249">Sudan (+249)</option>
+                        <option value="+597">Suriname (+597)</option>
+                        <option value="+268">Swaziland (+268)</option>
+                        <option value="+46">Sweden (+46)</option>
+                        <option value="+41">Switzerland (+41)</option>
+                        <option value="+963">Syria (+963)</option>
+                        <option value="+886">Taiwan (+886)</option>
+                        <option value="+7">Tajikstan (+7)</option>
+                        <option value="+66">Thailand (+66)</option>
+                        <option value="+228">Togo (+228)</option>
+                        <option value="+676">Tonga (+676)</option>
+                        <option value="+1868">Trinidad &amp; Tobago (+1868)</option>
+                        <option value="+216">Tunisia (+216)</option>
+                        <option value="+90">Turkey (+90)</option>
+                        <option value="+7">Turkmenistan (+7)</option>
+                        <option value="+993">Turkmenistan (+993)</option>
+                        <option value="+1649">Turks &amp; Caicos Islands (+1649)</option>
+                        <option value="+688">Tuvalu (+688)</option>
+                        <option value="+256">Uganda (+256)</option>
+                        <option value="+44">UK (+44)</option>
+                        <option value="+380">Ukraine (+380)</option>
+                        <option value="+971">United Arab Emirates (+971)</option>
+                        <option value="+598">Uruguay (+598)</option>
+                        <option value="+1">USA (+1)</option>
+                        <option value="+7">Uzbekistan (+7)</option>
+                        <option value="+678">Vanuatu (+678)</option>
+                        <option value="+379">Vatican City (+379)</option>
+                        <option value="+58">Venezuela (+58)</option>
+                        <option value="+84">Vietnam (+84)</option>
+                        <option value="+84">Virgin Islands - British (+1284)</option>
+                        <option value="+84">Virgin Islands - US (+1340)</option>
+                        <option value="+681">Wallis &amp; Futuna (+681)</option>
+                        <option value="+969">Yemen (North)(+969)</option>
+                        <option value="+967">Yemen (South)(+967)</option>
+                        <option value="+260">Zambia (+260)</option>
+                        <option value="+263">Zimbabwe (+263)</option>
+                    </select>
+                    <input type="text" ng-model="sharecoupon.contact" placeholder="Phone Number" required>
+                    <button type="button" ng-click="contact_form.$valid && sharecoupon.send_as_sms(sharecoupon.contact)">Submit</button>
+                    <button type="button" ng-click="sharecoupon.sendAs=''">Cancel</button>
+                </form>
+            </div>
+        </div>
+        <div class="col-md-12 col-sm-12 text-center" ng-if="sharecoupon.sendAs=='email'">
+            <div class="submit_btn">
+                <form name="email_form">
+                    <input type="email" ng-model="sharecoupon.email" placeholder="Email Address" required>
+                    <button type="button" ng-click="email_form.$valid && sharecoupon.send_as_email(sharecoupon.email)">Submit</button>
+                    <button type="button" ng-click="sharecoupon.sendAs=''">Cancel</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    </div>
+    <style type="text/css">
+    /*reset css*/
+    
+    @import url(http://fonts.googleapis.com/css?family=Arimo:400,400italic,700,700italic);
+    @import url(https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700,700italic,900,900italic);
+    html,
+    ,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+        -webkit-box-sizing: border-box;
+        -moz-box-sizing: border-box;
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+        border: 0;
+        font-size: 100%;
+        font: inherit;
+        vertical-align: baseline;
+    }
+    /* HTML5 display-role reset for older browsers */
+    
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+        display: block;
+    }
+    
+    body {
+        line-height: 1;
+    }
+    
+    ol,
+    ul {
+        list-style: none;
+    }
+    
+    blockquote,
+    q {
+        quotes: none;
+    }
+    
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+        content: '';
+        content: none;
+    }
+    
+    table {
+        border-collapse: collapse;
+        border-spacing: 0;
+    }
+    
+    body {
+        font-family: Roboto !important;
+        font-size: 14px;
+        color: #6f6f6f;
+    }
+    
+    ol,
+    ul {
+        padding: 0;
+    }
+    
+    div {
+        -webkit-transition: all .3s linear;
+        -moz-transition: all .3s linear;
+        -o-transition: all .4s linear;
+    }
+    /*//reset css*/
+    
+    p {
+        line-height: 24px;
+    }
+    
+    body {
+        margin: 0px;
+        padding: 0px;
+    }
+    
+    .top_hder {
+        background: #f6f6f6 none repeat scroll 0 0;
+        border-bottom: 1px solid #ccc;
+        margin: 0;
+        padding: 0;
+    }
+    
+    .logo {
+        /*background: rgba(255, 255, 255, 1) url("hhbh.png") repeat scroll 0 0;*/
+        display: inline-block;
+        height: 110px;
+        margin: 0 auto auto;
+        overflow: hidden;
+        padding: 10px;
+        text-align: center;
+        width: 250px;
+    }
+    
+    .get_one h3 {
+        font-size: 19px;
+        line-height: 30px;
+        color: #000;
+        margin: 0;
+        padding: 5px 0 0 45%;
+        text-align: right;
+    }
+    /*.get_one h1 {color: #333333; font-size: 50px; font-weight: normal; line-height: 51px; margin: 0; padding: 34px 0 0 10px; text-align: left; text-transform: uppercase;
+}*/
+    
+    .get_one span {
+        color: #ff3b69;
+        font-weight: 600;
+    }
+    /*.get_one p {color: #333333; font-size: 16px; font-weight: 400; letter-spacing: 1px; padding: 3px 0 0 14px; text-align: left; } 
+*/
+    
+    .logo img {
+        max-width: 100%;
+    }
+    /*.center_dumy h3 {color: #ff3b69; font-size: 17px; margin: 0; padding: 10px 37px 0; text-align: center; font-weight: 600; letter-spacing: 1px; line-height: 28px; }*/
+    
+    .middle_content_CUPON {
+        padding: 30px 0;
+    }
+    /*.middle_content_CUPON_left {background: #f2f2f2 none repeat scroll 0 0; border-radius: 5px; display: inline-block; float: left; font-size: 15px; margin: 0; min-height: 162px; padding: 10px 15px; text-align: left; width: 100%; }*/
+    
+    .middle_content_CUPON_left > p {
+        line-height: 26px;
+    }
+    /*.middle_content_CUPON_left span{color: #333333; font-weight: bold; padding: 0 9px 0 0; font-size: 20px; }*/
+    /*.middle_content_CUPON_right {background: #f2f2f2 none repeat scroll 0 0; display: inline-block; float: left; font-size: 15px; border-radius: 5px; margin-bottom: 15px; padding: 10px 15px; width: 100%; }*/
+    /*.middle_content_CUPON_right span {color: #333333; font-weight: bold; padding: 0 9px 0 0; font-size: 20px; }*/
+    
+    .post button {
+        background: #4c659d none repeat scroll 0 0;
+        border: 1px solid #4c659d;
+        color: #ffffff;
+        float: right;
+        font-size: 15px;
+        letter-spacing: 1px;
+        padding: 12px 20px;
+        text-align: center;
+        text-transform: uppercase;
+        width: 330px;
+        margin-right: 18px;
+        border-radius: 5px;
+    }
+    
+    .terms {
+        background: #f73068 none repeat scroll 0 0;
+        border-radius: 5px;
+        display: inline-block;
+        float: left;
+        font-size: 15px;
+        margin: 0;
+        min-height: 100px;
+        padding: 10px 15px;
+        text-align: left;
+        width: 100%;
+    }
+    
+    .terms span {
+        color: #fff;
+        display: inline-block;
+        font-size: 22px;
+        font-weight: bold;
+        padding: 5px 13px 0 0;
+    }
+    
+    .terms > p {
+        color: #fff;
+        display: inline-block;
+        line-height: 30px;
+        margin: 0 5px;
+        padding: 0 4px;
+    }
+    
+    .off {
+        background: #f2f2f2 none repeat scroll 0 0;
+        border-radius: 150px;
+        font-size: 15px;
+        height: 110px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 0;
+        padding: 37px 0px 0px 5px;
+        text-align: center;
+        width: 110px;
+        overflow: hidden;
+    }
+    
+    .off span {
+        color: #FF3B69;
+        font-weight: bold;
+        padding: 0 9px 0 0;
+        font-size: 29px;
+    }
+    
+    .off > p {
+        color: #ff0000;
+        font-size: 23px;
+    }
+    
+    .middle_content_CUPON_right span {
+        background: #f73068 none repeat scroll 0 0;
+        border-radius: 4px;
+        color: #fff;
+        font-size: 22px;
+        font-weight: 600;
+        margin: 0 7px 0 0;
+        padding: 5px 13px;
+        text-transform: uppercase;
+    }
+    
+    .fifty {
+        float: left;
+        margin: 0;
+        width: 50%;
+    }
+    
+    .middle_content_CUPON_right {
+        display: inline-block;
+        float: left;
+        font-size: 15px;
+        border-radius: 5px;
+        margin-bottom: 15px;
+        padding: 10px 15px;
+        width: 100%;
+    }
+    
+    .middle_content_CUPON_right > p {
+        background: #f3f3f3 none repeat scroll 0 0;
+        border: 1px solid #e9e9e9;
+        font-size: 22px;
+        font-weight: 400;
+        padding: 6px 0;
+        text-transform: none;
+    }
+    
+    .middle_content_CUPON_left {
+        background: #e7e7e7 none repeat scroll 0 0;
+        border: 3px solid #fff;
+        border-radius: 5px;
+        box-shadow: 0 1px 8px 0 rgba(120, 120, 120, 0.4);
+        display: inline-block;
+        float: left;
+        font-size: 15px;
+        margin: 5px 0 0;
+        min-height: 206px;
+        padding: 26px 28px;
+        text-align: left;
+        width: 100%;
+    }
+    
+    .get_one p {
+        color: #949494;
+        font-family: serif;
+        font-size: 20px;
+        font-weight: 500;
+        letter-spacing: 0;
+        margin: 0;
+        padding: 3px 0 0 14px;
+    }
+    
+    .get_one h1 {
+        color: #000;
+        font-size: 36px;
+        font-weight: 600;
+        margin: 10px 0 0 0;
+        padding: 0 0 0px;
+        text-align: right;
+        text-transform: capitalize;
+    }
+    
+    .center_dumy h3 {
+        color: #000000;
+        font-family: serif;
+        font-size: 18px;
+        font-weight: normal;
+        letter-spacing: 0;
+        line-height: 28px;
+        margin: 0;
+        padding: 10px 205px;
+        text-align: center;
+    }
+    
+    .middle_content_CUPON_left span {
+        color: #333333;
+        font-size: 35px;
+        font-weight: bold;
+        padding: 0;
+    }
+    
+    .text_cupn {
+        color: #000;
+        display: inline-block;
+        font-size: 22px;
+        font-weight: 400;
+        line-height: 30px !important;
+        margin: 1;
+        padding: 6px 0 0;
+        width: 100%;
+    }
+    
+    .text_cupn a {
+        color: #ff3b69;
+        font-style: italic;
+    }
+    
+    .text_cupn a:hover {
+        text-decoration: none;
+    }
+    
+    .post img {
+        max-width: 260px;
+        float: right;
+    }
+    
+    .post {
+        color: #000;
+        display: inline-block;
+        float: left;
+        font-size: 20px;
+        margin: 0;
+        padding: 12px 0 8px 18px;
+        width: 100%;
+    }
+    
+    .post > a {
+        float: right;
+        margin: 0 0 0 18px;
+    }
+
+.INNER_SAPN {
+  background: transparent none repeat scroll 0 0 !important;
+  color: #6f6f6f !important;
+  font-size: 22px !important;
+  font-weight: 400 !important;
+  padding: 0 !important; text-transform: lowercase !important;
+}
+
+
+    
+    @media(min-width: 320px) and (max-width: 480px) {
+        .center_dumy h3 {
+            padding: 0px;
+        }
+        .middle_content_CUPON {
+            padding: 0px;
+        }
+        .post button {
+            float: left;
+            font-size: 11px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            width: 269px;
+        }
+        .terms {
+            margin: 0px 0px 11px 0px;
+        }
+    }
+    
+    @media(min-width: 481px) and (max-width: 640px) {
+        .center_dumy h3 {
+            padding: 0px;
+        }
+        .middle_content_CUPON {
+            padding: 0px;
+        }
+        .post button {
+            float: left;
+            font-size: 11px;
+            margin: 0 auto;
+            padding: 12px 20px;
+            width: 269px;
+        }
+        .terms {
+            margin: 0px 0px 11px 0px;
+        }
+    }
+    </style>

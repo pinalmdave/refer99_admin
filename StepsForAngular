@@ -1,0 +1,186 @@
+
+Install Iconic
+
+Install JDK 8. (This part was taken from this question).
+curl -sL https://deb.nodesource.com/setup_0.12 | sudo bash -
+sudo apt-get install -y nodejs
+
+
+
+sudo add-apt-repository ppa:webupd8team/java
+sudo apt-get update
+sudo apt-get install oracle-java8-installer
+sudo apt-get install oracle-java8-set-default
+
+sudo npm install -g cordova
+sudo npm install -g ionic
+sudo npm install -g  bower gulp
+
+
+|||||||||||||||||||||||||||||||||||||||||||||||||||||||||||||
+install mongoDB
+
+sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+echo "deb http://repo.mongodb.org/apt/ubuntu "$(lsb_release -sc)"/mongodb-org/3.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-3.0.list
+sudo apt-get install -y mongodb-org
+service mongod status
+**************************
+install strongloop
+
+npm install -g strongloop
+
+slc loopback
+
+sudo chmod -R 777 package.json 
+
+slc arc|slc start
+
+***********************************************
+
+MOngo DB Backup
+
+https://www.digitalocean.com/community/tutorials/how-to-back-up-restore-and-migrate-a-mongodb-database-on-ubuntu-14-04
+root@osvinadmin-OEM:/home# cd osvinuser/
+root@osvinadmin-OEM:/home/osvinuser# cd Desktop/
+root@osvinadmin-OEM:/home/osvinuser/Desktop# cd PPK-files/
+root@osvinadmin-OEM:/home/osvinuser/Desktop/PPK-files# 
+root@osvinadmin-OEM:/home/osvinuser/Desktop/PPK-files# sudo chmod -R 400 Viraldi.pem
+root@osvinadmin-OEM:/home/osvinuser/Desktop/PPK-files# ssh -i "Viraldi.pem" 
+
+root@osvinadmin-OEM:/home/osvinuser/Desktop/PPK-files# ssh -i "Viraldi.pem" ubuntu@ec2-35-162-137-242.us-west-2.compute.amazonaws.com
+Are you sure you want to continue connecting (yes/no)? yes
+
+ubuntu@ip-172-31-33-244:~$ cd /home/ubuntu/viralDl
+ubuntu@ip-172-31-33-244:~/viralDl$ sudo mkdir /var/backups/mongobackups
+ubuntu@ip-172-31-33-244:~/viralDl$ sudo mongodump --db viralDi --out /var/backups/mongobackups/`date +"%m-%d-%y"`
+ubuntu@ip-172-31-33-244:~/viralDl$ ^C
+ubuntu@ip-172-31-33-244:~/viralDl$ exit
+*************************************************
+MOngo Db Restore DB
+
+sudo mongorestore --db demo --drop /home/osvinuser/Documents/vijju/backup/viraldl/mongobackup/viralDi
+show dbs
+use demo
+show collections
+************************************************************
+
+///////////////////////////////////////////////////////
+  405  node
+  406  node --version
+  407  git clone https://github.com/rdash/rdash-angular.git
+  408  node
+  409  node --version
+  414  git clone https://github.com/rdash/rdash-angular.git
+  416  cd /var/www/html/
+  418  git clone https://github.com/rdash/rdash-angular.git
+  421  cd rdash-angular/
+  422  ls 
+  423  bower install
+  424  sudo npm install -g bower
+  425  bower install
+  426  npm install
+  427  gulp
+  428  npm instal -g gulp
+  430  sudo npm install -g gulp
+  433  gulp
+  434  cd rdash-angular/
+osvinuser@osvinadmin-OEM:~$ cd /var/www/html/
+osvinuser@osvinadmin-OEM:/var/www/html$ cd rdash-angular/
+osvinuser@osvinadmin-OEM:/var/www/html/rdash-angular$ gulp
+[18:35:03] Using gulpfile /var/www/html/rdash-angular/gulpfile.js
+[//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+  444  bower install angular-local-storage --save
+  445  bower install restangular
+  446  bower
+  447  ifconfig
+  448  bower
+  450  sudo bower
+  451  bower
+  452  gulp
+  453  cd ..
+  454  cd client.glutme
+  455  npm install
+  456  sudo npm install
+  457  bower install
+  458  gulp
+  459  cd ..
+  460  cd rdash-angular/
+  461  gulp
+  462  cd /var/www/html/
+  463  cd rdash-angular/
+  464  gulp
+  465  cd /var/www/html/
+  466  cd rdash-angular/
+  467  gulp
+  468  cd /var/www/html/
+  469  cd rdash-angular/
+  470  gulp
+  471  cd ..
+  472  https://github.com/PauloLuan/angular-gulp-seed.git
+  473  git clonehttps://github.com/PauloLuan/angular-gulp-seed.git
+  474  git clone https://github.com/PauloLuan/angular-gulp-seed.git
+  475  cd angular-gulp-seed/
+  476  bower install
+  477  sudo npm install
+  478  bower install restangular --save
+  479  bower install angular-local-storage --save
+  480  gulp
+  481  gulp serve
+  482  bower install angular-bootstrap --save
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+for making Build or Dist
+
+osvinuser@osvinadmin-OEM:/var/www/html/angular-gulp-seed$ gulp build
+
+///////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+Steps of MONGO 
+
+
+osvinuser@osvinadmin-OEM:/var/www/html/angular-gulp-seed$ cd /home/osvinuser/Desktop/
+osvinuser@osvinadmin-OEM:~/Desktop$ ls
+osvinuser@osvinadmin-OEM:~/Desktop$ cd PPK-files/
+osvinuser@osvinadmin-OEM:~/Desktop/PPK-files$ ls
+osvinuser@osvinadmin-OEM:~/Desktop/PPK-files$ chmod -R 400 Viraldi.pem 
+osvinuser@osvinadmin-OEM:~/Desktop/PPK-files$ ssh -i "Viraldi.pem" ubuntu@ec2-35-162-137-242.us-west-2.compute.amazonaws.com
+Are you sure you want to continue connecting (yes/no)? yes
+
+sudo netstat -ntulp
+sudo kill -9 28376
+sudo kill -9 28354
+slc start|slc arc
+
+
+
+||||||||||||||||||||||||||||||
+
+challange me
+ssh root@46.166.161.39
+password @.b#{%6=23nq
+
+connect 
+
+osvinuser@osvinadmin-OEM:~$ ssh root@46.166.161.39
+root@46.166.161.39's @.b#{%6=23nq:
+
+
+server restart
+
+[root@VM2020 public_html]# ^C
+[root@VM2020 public_html]# node server.js
+
+for logout
+
+[root@VM2020 ~]# cd /home/thechallengeme/public_html/
+[root@VM2020 public_html]# netstat -ntulp | grep 9995 
+[root@VM2020 public_html]# nohup node server.js
+[1] 29847
+[root@VM2020 public_html]# nohup: ignoring input and appending output to ‘nohup.out’
+
+[root@VM2020 public_html]# exit
+
+
+|||||||||||||||||||||||||||||

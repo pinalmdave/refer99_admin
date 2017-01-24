@@ -1,0 +1,20 @@
+
+
+<div class="modal-demo" >
+<form class="user-container" name="editUser">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h4 class="modal-title">Edit User</h4>
+    </div>
+    <div class="modal-body">
+      <input class="modal-inputs_penal" type="text" ng-model="username" placeholder="username" required>
+      <input class="modal-inputs_penal" type="email" ng-model="email" placeholder="email" required>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" ng-click="close()">Close</button>
+      <input type="submit" class="btn btn-primary"  ng-click="editUser.$valid && updateuser(username,email)" value="Update">
+    </div>
+  </div><!-- /.modal-content -->
+</form>
+</div>

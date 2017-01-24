@@ -1,0 +1,59 @@
+
+<nav class="navbar navbar-static-top navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="#/">
+                <span class="glyphicon glyphicon-home"></span> refer99 Admin
+            </a>
+        </div>
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-6">
+            <ul class="nav navbar-nav" ng-if="vm.user">
+                <li ng-class="{'home':'active'}[vm.onState.current.name]"><a ng-href="#/" ng-click="vm.onState='home'">Home</a></li>
+                <li ng-class="{'user':'active'}[vm.onState.current.name]"><a href="#/user">Users</a></li>
+            </ul>
+            <ul class="nav navbar-nav navbar-left">
+                <li class="dropdown" ng-class="{'coupon':'active'}[vm.onState.current.name]">
+                  <a href="" class="dropdown-toggle" data-toggle="dropdown">Coupons<span class="caret"></span></a>
+                  <ul class="dropdown-menu" role="menu">
+                    <li><a href="#/coupon">Generated</a></li>
+                    <li><a href="#/coupon/distributed">Distributed</a></li>
+                    <li><a href="#/coupon/activated">Activated</a></li>
+                    <li><a href="#/coupon/redeemed">Redeemed</a></li>
+
+                </ul>
+            </li>
+          </ul>
+        <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown" ng-class="{'profile':'active', 'password':'active'}[vm.onState.current.name]">
+              <a href="" class="dropdown-toggle" data-toggle="dropdown"><h5>{{vm.user.user.username}}<span class="caret"></h5></span>
+              </a>
+              <ul class="dropdown-menu" role="menu">
+                <li><a href="#/profile">Update Profile</a></li>
+                <li><a href="#/password">Change Password</a></li>
+                <li class="divider"></li>
+                <li><a href ng-click="vm.logout()">Logout</a></li>
+              </ul>
+           </li>
+       </ul>
+    </div>
+ </div>
+ </div>
+</nav>
+
+
+
+
+<script type="text/javascript">
+$(document).ready(function(){
+    $(".dropdown").hover(            
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideDown("fast");
+            $(this).toggleClass('open');        
+        },
+        function() {
+            $('.dropdown-menu', this).not('.in .dropdown-menu').stop( true, true ).slideUp("fast");
+            $(this).toggleClass('open');       
+        }
+        );
+});
+</script>

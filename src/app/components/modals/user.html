@@ -1,0 +1,26 @@
+<div class="modal-demo">
+<form class="user-container" name="addUser">
+  <div class="modal-content">
+    <div class="modal-header">
+      <button type="button" ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h4 class="modal-title">Add User</h4>
+            <div class="alert alert-success" ng-if="successMessageModal">
+              <!-- <strong>Success!</strong> -->{{successMessageModal}}
+            </div>
+            <div class="alert alert-danger" ng-if="errorMessageModal">
+              <!-- <strong>error!</strong> -->{{errorMessageModal}}
+            </div>
+    </div>
+    <div class="modal-body">
+      <input class="modal-inputs_penal" type="text" ng-model="username" placeholder="username" required>
+      <input class="modal-inputs_penal" type="email" ng-model="email" placeholder="email" required>
+      <input class="modal-inputs_penal" type="password" ng-model="password" placeholder="password" required>
+      <input class="modal-inputs_penal" type="password" ng-model="cpassword" placeholder="confirm password" required>
+    </div>
+    <div class="modal-footer">
+      <button type="button" class="btn btn-success" ng-click="close()">Close</button>
+      <input type="submit" class="btn btn-primary"  ng-click="addUser.$valid && save(email,password,username,cpassword)" value="Save">
+    </div>
+  </div><!-- /.modal-content -->
+</form>
+</div>

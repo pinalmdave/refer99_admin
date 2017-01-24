@@ -1,0 +1,86 @@
+
+ <div>
+        <acme-navbar />
+    </div>
+<div class="container">
+
+<div class="row">
+
+  <div class="col-lg-12">
+    <rd-widget1>
+      <rd-widget-header icon="fa-tasks" title="Striped Servers">
+      </rd-widget-header>
+      <rd-widget-body classes="medium no-padding">
+        <div class="table-responsive">
+          <table class="table table-striped">
+          <div class="col-sm-12">
+            <h2>Coupon List</h2>
+            <div class="alert alert-success" ng-if="couponstatus.successMessage">
+              <!-- <strong>Success!</strong> -->{{couponstatus.successMessage}}
+            </div>
+            <div class="alert alert-danger" ng-if="couponstatus.errorMessage">
+              <!-- <strong>Success!</strong> -->{{couponstatus.errorMessage}}
+            </div>
+            <input type="text" style="float:right;width:20%"  ng-model="search" class="form-control" placeholder="Search">
+            <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered dataTable no-footer" id="hidden-table-info" role="grid" aria-describedby="hidden-table-info_info">
+
+                <thead>
+                    <tr>
+                      <th> <a href="" ng-click="couponstatus.sortType = 'id'; couponstatus.sortReverse = !couponstatus.sortReverse">Id
+                        <span ng-show="couponstatus.sortType == 'id' && !couponstatus.sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="couponstatus.sortType == 'id' && couponstatus.sortReverse" class="fa fa-caret-up"></span>
+                      </a>
+                     </th>
+                     <th> <a href="" ng-click="couponlist.sortType = 'c_code'; couponlist.sortReverse = !couponlist.sortReverse">customer name
+                     <span ng-show="couponlist.sortType == 'customers.cust_name' && !couponlist.sortReverse" class="fa fa-caret-down"></span>
+                     <span ng-show="couponlist.sortType == 'customers.cust_name' && couponlist.sortReverse" class="fa fa-caret-up"></span>
+                     </a>
+                     </th>
+                      <th> <a href="" ng-click="couponstatus.sortType = 'c_code'; couponstatus.sortReverse = !couponstatus.sortReverse">Coupon Code
+                        <span ng-show="couponstatus.sortType == 'c_code' && !couponstatus.sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="couponstatus.sortType == 'c_code' && couponstatus.sortReverse" class="fa fa-caret-up"></span>
+                      </a>
+                     </th>
+                       <th> <a href="" ng-click="couponstatus.sortType = 'status'; couponstatus.sortReverse = !couponstatus.sortReverse">Status
+                        <span ng-show="couponstatus.sortType == 'status' && !couponstatus.sortReverse" class="fa fa-caret-down"></span>
+                        <span ng-show="couponstatus.sortType == 'status' && couponstatus.sortReverse" class="fa fa-caret-up"></span>
+                      </a>
+                     </th>
+                      <th>Action</th></tr>
+                  </thead>
+                  <tbody>                          
+                    <tr class="gradeX odd" id="UserRowId66" role="row" ng-repeat="x in couponstatus.records| orderBy:couponstatus.sortType:couponstatus.sortReverse |filter:search | startFrom:couponstatus.currentPage*couponstatus.pageSize | limitTo:couponstatus.pageSize">
+                      <td class="sorting_1">{{x.id}}</td>
+                      <td>{{x.customers.cust_name ? x.customers.cust_name : 'N/A'}}</td>  
+                      <td>{{x.c_code}}</td>                          
+                      <td>{{x.status}}</td>
+                      <td>
+                          <a class="trash"  ng-click="couponstatus.deleteCoupon($index,x.id)" id="66" style="color:white"><span class="btn btn-shadow btn-danger DETETE_BUTTON">Delete</span></a>
+                      </td>
+                    </tr>
+                   
+                        </tbody>
+                 </table>
+                <div style="float:right">
+                <button class="btn btn-shadow btn-primary"  ng-disabled="couponstatus.currentPage == 0" ng-click="couponstatus.currentPage=couponstatus.currentPage-1">
+                  Previous
+                </button>
+                {{couponstatus.currentPage+1}}/{{couponstatus.numberOfPages()}}
+                <button class="btn btn-shadow btn-primary" ng-disabled="couponstatus.currentPage >= couponstatus.records.length/couponstatus.pageSize - 1" ng-click="couponstatus.currentPage=couponstatus.currentPage+1">
+                  Next
+                </button>
+               </div>
+          </div>
+        </div>
+      </rd-widget-body>
+    </rd-widget>
+  </div>
+</div>
+</div>
+
+
+
+
+ <div>
+        <acme-footer />
+    </div>

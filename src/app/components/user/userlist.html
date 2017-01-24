@@ -1,0 +1,95 @@
+
+<div>
+  <acme-navbar />
+</div>
+<div class="container">
+
+  <div class="row">
+
+    <div class="col-lg-12">
+      <rd-widget1>
+      <rd-widget-header icon="fa-tasks" title="Striped Servers">
+    </rd-widget-header>
+    <rd-widget-body classes="medium no-padding">
+    <div class="table-responsive">
+      <table class="table table-striped">
+        <div class="col-sm-12" >
+          <h2>User List</h2>
+          <div class="alert alert-success" ng-if="userlist.successMessage">
+            <!-- <strong>Success!</strong> -->{{userlist.successMessage}}
+          </div>
+          <div class="alert alert-danger" ng-if="userlist.errorMessage">
+            <!-- <strong>Success!</strong> -->{{userlist.errorMessage}}
+          </div>
+          <a type="button"  ng-click="userlist.openUserModal()" style="float:right"><span style="float:right" class="btn btn-shadow btn-primary">Add User</span></a>
+          <input type="text" style="float:right;width:20%"  ng-model="search" class="form-control" placeholder="Search">
+          <table cellpadding="0" cellspacing="0" border="0" class="display table table-bordered dataTable no-footer" id="hidden-table-info" role="grid" aria-describedby="hidden-table-info_info">
+
+            <thead>
+              <tr>
+
+                <th> <a href="" ng-click="userlist.sortType = 'id'; userlist.sortReverse = !userlist.sortReverse">
+                  Id 
+                  <span ng-show="userlist.sortType == 'id' && !userlist.sortReverse" class="fa fa-caret-down"></span>
+                  <span ng-show="userlist.sortType == 'id' && userlist.sortReverse" class="fa fa-caret-up"></span>
+                </a></th>
+
+
+                <th><a href="" ng-click="userlist.sortType = 'username'; userlist.sortReverse = !userlist.sortReverse">
+                  Username
+                  <span ng-show="userlist.sortType == 'username' && !userlist.sortReverse" class="fa fa-caret-down"></span>
+                  <span ng-show="userlist.sortType == 'username' && userlist.sortReverse" class="fa fa-caret-up"></span>
+                </a></th>
+
+                <th><a href="" ng-click="userlist.sortType = 'email'; userlist.sortReverse = !userlist.sortReverse">
+                  Email
+                  <span ng-show="userlist.sortType == 'email' && !userlist.sortReverse" class="fa fa-caret-down"></span>
+                  <span ng-show="userlist.sortType == 'email' && userlist.sortReverse" class="fa fa-caret-up"></span>
+                </a></th>
+
+                <th>Action</th>
+
+              </tr>
+            </thead>
+            <tbody ng-if="userlist.records.length">                          
+              <tr class="gradeX odd" id="UserRowId66" role="row" ng-repeat="x in userlist.records | orderBy:userlist.sortType:userlist.sortReverse |filter:search | startFrom:userlist.currentPage*userlist.pageSize | limitTo:userlist.pageSize" >
+                <td class="sorting_1">{{x.id}}</td>  
+                <td>{{x.username}}</td>                          
+                <td> {{x.email}}</td>
+                <td>
+                  <a  ng-click="userlist.openEditUserModal($index,x.id,x.email,x.username)"  style="color:white"><span class="btn btn-shadow btn-success EDIt_BUtton">Edit</span></a>
+                  <a class="trash"  ng-click="userlist.deleteUser($index,x.id)" id="66" style="color:white"><span class="btn btn-shadow btn-danger DETETE_BUTTON">Delete</span></a>
+                </td>
+              </tr>
+
+            </tbody>
+          </table>
+
+
+
+          <div style="float:right">
+          <button class="btn btn-shadow btn-primary"  ng-disabled="userlist.currentPage == 0" ng-click="userlist.currentPage=userlist.currentPage-1">
+            Previous
+          </button>
+          {{userlist.currentPage+1}}/{{userlist.numberOfPages()}}
+          <button class="btn btn-shadow btn-primary" ng-disabled="userlist.currentPage >= userlist.records.length/userlist.pageSize - 1" ng-click="userlist.currentPage=userlist.currentPage+1">
+            Next
+          </button>
+         </div>
+
+
+        </div>
+      </div>
+    </rd-widget-body>
+  </rd-widget>
+</div>
+</div>
+</div>
+
+
+<div>
+  <acme-footer />
+</div>
+
+
+
