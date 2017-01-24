@@ -27,12 +27,7 @@
                 </div>
                 <div class="col-md-8 col-sm-8">
                     <div class="middle_content_CUPON_right">
-                        <p><span>OFFERS</span> : <span class="INNER_SAPN" ng-if="sharecoupon.camp_data.discount_type=='price'">${{sharecoupon.camp_data.discount_amount}} OFF</span>
-                        <span class="INNER_SAPN" ng-if="sharecoupon.camp_data.discount_type=='percent'">{{sharecoupon.camp_data.discount_amount}}% OFF</span>
-                        <span class="INNER_SAPN" ng-if="sharecoupon.camp_data.discount_type=='buy_1_get_1'">Buy {{sharecoupon.camp_data.buy_value}} Get {{sharecoupon.camp_data.get_value}}</span>
-                        <span class="INNER_SAPN" ng-if="sharecoupon.camp_data.discount_type=='free_item'">Free Item</span>
-                        <span class="INNER_SAPN" ng-if="sharecoupon.camp_data.business_type != 'default'">ON {{sharecoupon.camp_data.business_type}}</span>
-                        <span class="INNER_SAPN" ng-if="sharecoupon.camp_data.business_type == 'default'">ON PURCHASE</span></p>
+                        <p><span>OFFER</span> : {{sharecoupon.camp_data.cp_offer}}</p>
                     </div>
                     <div class="middle_content_CUPON_right">
                         <p class="fifty"><span>Code</span> : {{sharecoupon.coupon_data.c_code?sharecoupon.coupon_data.c_code:"XXXXXX"}}</p>
@@ -50,14 +45,14 @@
     <section>
         <div class="container">
             <div class="row top_hder middle_content_CUPON">
-                <div class="col-md-6 col-sm-6 col-sm-12">
+<!--                 <div class="col-md-6 col-sm-6 col-sm-12">
                     <div class="terms">
                         <p><span>Disclaimer :</span>{{sharecoupon.camp_data.cp_disclaimer}}</p>
                     </div>
-                </div>
-                <div class="col-md-6 col-sm-6 col-sm-12">
+                </div> -->
+                <div class="col-md-12 col-sm-12 col-sm-12">
                     <div class="terms">
-                        <p><span>Additional Text :</span>{{sharecoupon.camp_data.cp_additional_text}}</p>
+                        <p><span>Terms & Conditions :</span>{{sharecoupon.camp_data.cp_terms}}</p>
                     </div>
                 </div>
             </div>

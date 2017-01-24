@@ -13,183 +13,105 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
 
 // bower:scss
 // endbower
-.privacy_a {
-    background: #f9f9f9;
-    height: 295px;
-    padding: 10px;
-    border-color: #fff;
-    overflow: hidden !important;
-    box-shadow: 0 1px 8px 0 rgba(235, 235, 235, .4)!important;
-}
-
-.privacy_a p {
-    font-size: 13px!important;
-    padding: 5px;
-    margin: 0px;
-    line-height: 23px;
-}
-
-.privacy_b {
-    background: #f9f9f9;
-    height: 295px;
-    padding: 10px;
-    border-color: #fff;
-    overflow: hidden !important;
-    box-shadow: 0 1px 8px 0 rgba(235, 235, 235, 0.4)!important;
-}
-
-.privacy_b p {
-    font-size: 13px!important;
-    padding: 5px;
-    margin: 0px;
-    line-height: 23px;
-}
-
-.browsehappy {
-    margin: 0.2em 0;
-    background: #ccc;
-    color: #000;
-    padding: 0.2em 0;
-}
-
-.thumbnail {
-    height: 200px;
-    img.pull-right {
-        width: 50px;
-    }
-}
-
-body {
-    margin: 0px;
-    padding: 0px;
-}
-
-.piza_coupon {
-    background: rgba(0, 0, 0, 0) url("../img/Rectangle@x.png") no-repeat scroll center top / cover;
-    height: 335px;
-    text-align: center;
-}
-
-.piza_coupon h1 {
-    color: #ffffff;
-    font-family: "Roboto", sans-serif;
-    font-size: 34px;
-    font-weight: bold;
-    line-height: 39px;
-    margin: 0;
-    padding: 84px 0 0;
-}
-
-.piza_coupon p {
-    color: #ffffff;
-    font-family: "Open Sans", sans-serif;
-    font-size: 15px;
-    font-weight: bold;
-    line-height: 24px;
-    margin: 0;
-    padding: 0;
-}
-
-.piza_coupon h2 {
-    color: #2b3b4e;
-    font-family: "Open Sans", sans-serif;
-    font-size: 33px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    margin: 0;
-    padding: 100px 0 0;
-}
-
-.piza_coupon h4 {
-    color: #2b3b4e;
-    font-size: 19px;
-    font-weight: bold;
-    letter-spacing: 1px;
-    margin: 0;
-    padding: 16px 0 25px;
-}
-
-.piza_coupon h5 {
-    color: #a0a0a0;
-    font-size: 21px;
-    font-weight: 600;
-    letter-spacing: 1px;
-    line-height: 35px;
-    margin: 0;
-    padding: 1px 0 3px;
-}
-
-.piza_screen {
-    padding: 20px 0 0;
-    text-align: center;
-}
-
-.piza_screen h2 span {
-    color: #ff3b69;
-    font-family: "Roboto", sans-serif;
-    padding: 0 0 0 10px;
-}
-
-.whtasapp button {
-    background: #00cc87 none repeat scroll 0 0;
-    border: 1px solid #00cc87;
-    color: #ffffff;
-    font-family: "Roboto", sans-serif;
-    font-size: 19px;
-    font-weight: 500;
-    height: 55px;
-    letter-spacing: 1px;
-    margin: 25px 0 22px;
-    padding: 0;
-    text-align: center;
-    width: 340px !important;
-}
-
-.share_background {
-    background: #f3f3f2 none repeat scroll 0 0;
-    padding: 0 14px;
-}
-
-.whtasapp.text-center > p {
-    font-size: 16px!important;
-    padding: 13px 0px 10px 0px;
-}
-
-.piza_coupon {
-    background: rgba(0, 0, 0, 0) url("../img/Rectangle@2x.png") no-repeat scroll center top;
-    height: 600px;
-    text-align: center;
-}
-
-@media(min-width: 320px) and (max-width:480px) {
-    .piza_coupon h5 {
-        font-size: 15px;
-    }
-    .piza_coupon h2 {
-        padding: 78px 0 0;
-    }
-}
-
+.privacy_a {background: #f9f9f9; height: 295px; padding: 10px; border-color: #fff; overflow: hidden !important; box-shadow: 0 1px 8px 0 rgba(235, 235, 235, .4)!important; }
+.privacy_a p {font-size: 13px!important; padding: 5px; margin: 0px; line-height: 23px; }
+.privacy_b {background: #f9f9f9; height: 295px; padding: 10px; border-color: #fff; overflow: hidden !important; box-shadow: 0 1px 8px 0 rgba(235, 235, 235, 0.4)!important; }
+.privacy_b p {font-size: 13px!important; padding: 5px; margin: 0px; line-height: 23px; }
+.browsehappy {margin: 0.2em 0; background: #ccc; color: #000; padding: 0.2em 0; }
+.thumbnail {height: 200px;}
+img.pull-right {width: 50px; }
+body {margin: 0px; padding: 0px; }
+.piza_coupon {background: rgba(0, 0, 0, 0) url("../img/Rectangle@x.png") no-repeat scroll center top / cover; height: 335px; text-align: center; }
+.piza_coupon h1 {color: #ffffff; font-family: "Roboto", sans-serif; font-size: 34px; font-weight: bold; line-height: 39px; margin: 0; padding: 84px 0 0; }
+.piza_coupon p {color: #ffffff; font-family: "Open Sans", sans-serif; font-size: 15px; font-weight: bold; line-height: 24px; margin: 0; padding: 0; }
+.piza_coupon h2 {color: #2b3b4e; font-family: "Open Sans", sans-serif; font-size: 33px; font-weight: 600; letter-spacing: 1px; margin: 0; padding: 100px 0 0; }
+.piza_coupon h4 {color: #2b3b4e; font-size: 19px; font-weight: bold; letter-spacing: 1px; margin: 0; padding: 16px 0 25px; }
+.piza_coupon h5 {color: #a0a0a0; font-size: 21px; font-weight: 600; letter-spacing: 1px; line-height: 35px; margin: 0; padding: 1px 0 3px; }
+.piza_screen {padding: 20px 0 0; text-align: center; }
+.piza_screen h2 span {color: #ff3b69; font-family: "Roboto", sans-serif; padding: 0 0 0 10px; }
+.whtasapp button {background: #00cc87 none repeat scroll 0 0; border: 1px solid #00cc87; color: #ffffff; font-family: "Roboto", sans-serif; font-size: 19px; font-weight: 500; height: 55px; letter-spacing: 1px; margin: 25px 0 22px; padding: 0; text-align: center; width: 340px !important; }
+.share_background {background: #f3f3f2 none repeat scroll 0 0; padding: 0 14px; }
+.whtasapp.text-center > p {font-size: 16px!important; padding: 13px 0px 10px 0px; }
+.piza_coupon {background: rgba(0, 0, 0, 0) url("../img/Rectangle@2x.png") no-repeat scroll center top; height: 600px; text-align: center; }
 .butn button{ background: #00cb87; border: 1px solid #00cb87; color: #FFF; width: 130px; padding: 8px 20px; margin: 10px 10px 10px 5px;  text-align: center;}
 .through h4{  font-size: 18px; margin: 0px; padding: 10px 0px 10px 0px; }
 .submit_btn{ margin: 15px 0px 30px 0px; }
 .submit_btn input{ border:1px solid #b1b1b1; height: 37px; padding: 4px 0px; color: #333; width: 300px; }
 .submit_btn button{background: #00cb87; border: 1px solid #00cb87; color: #FFF; width: 130px; padding: 8px 20px; margin: 10px 10px 10px 5px;  text-align: center;  }
 .submit_btn select{ background: #f1f1f1; color: #333; width: 150px;  border: 1px solid #b1b1b1; padding: 4px 0px; height: 37px; }
-
 .left_textAlign{ text-align: left !important; }
 .center_textAlign{ text-align: center !important; }
-
 /*.get_one h1 {color: #333333; font-size: 50px; font-weight: normal; line-height: 51px; margin: 0; padding: 34px 0 0 10px; text-align: left; text-transform: uppercase;
 }*/
 
+@media(min-width: 300px) and (max-width:480px) {
+.piza_coupon h5 {font-size: 15px; }
+.piza_coupon h2 {padding: 78px 0 0; }
+.get_one h3 {font-size: 15px !important; line-height: 26px !important; margin: 0 0 10px !important; padding: 5px 0 0 0 !important; text-align: center !important; }
+.get_one h1 {padding: 0; text-align: center !important; }
+.middle_content_CUPON_left span { font-size: 19px !important;}
+.text_cupn {  font-size: 13px !important;  font-weight: 600 !important;}
+.logo {width: 100% !important; }
+.middle_content_CUPON_right > p {font-size: 12px !important; font-weight: 400; padding: 0 !important;}
+.middle_content_CUPON_right:nth-child(1) {margin: 30px 0 0 !important; }
+.middle_content_CUPON_right {padding: 0 !important; margin-bottom: 0px !important; }
+.middle_content_CUPON_right span {font-size: 10px !important; margin: 0 7px 0 0; padding: 7px 5px !important; }
+.fifty {margin: 0 0 15px !important; width: 100% !important; }
+.terms {font-size: 13px !important; padding: 0 !important; }
+.terms span {font-size: 16px !important; }
+.top_hder {margin: 10px 0 !important; }
+}
+@media(min-width: 481px) and (max-width:640px) {
+.piza_coupon h5 {font-size: 15px; }
+.piza_coupon h2 {padding: 78px 0 0; }
+.get_one h3 {font-size: 15px !important; line-height: 26px !important; margin: 0 0 10px !important; padding: 5px 0 0 0 !important; text-align: left !important; }
+.get_one h1 {padding: 0; text-align: center !important; }
+.middle_content_CUPON_left span { font-size: 19px !important;}
+.text_cupn {  font-size: 13px !important;  font-weight: 600 !important;}
+.logo {width: 100% !important; }
+.middle_content_CUPON_right > p {font-size: 12px !important; font-weight: 400; padding: 0 !important;}
+.middle_content_CUPON_right:nth-child(1) {margin: 30px 0 0 !important; }
+.middle_content_CUPON_right {padding: 0 !important; margin-bottom: 0px !important; }
+.middle_content_CUPON_right span {font-size: 10px !important; margin: 0 7px 0 0; padding: 7px 5px !important; }
+.fifty {margin: 0 0 15px !important; width: 100% !important; }
+.terms {font-size: 13px !important; padding: 0 !important; }
+.terms span {font-size: 16px !important; }
+.top_hder {margin: 10px 0 !important; }
+}
+
+@media only screen and (min-device-width : 360px) and (max-device-width : 730px) and (orientation : landscape){
+.middle_content_CUPON_left span {
+  font-size: 30px !important;
+}
+.text_cupn {
+  font-size: 24px !important;
+  font-weight: 400 !important;
+}
+.left_textAlign {
+  text-align: center !important;
+}
+.get_one h3 {
+  text-align: center !important;
+}
+
+}
 
 
 
-/**
- *  Do not remove this comments bellow. It's the markers used by gulp-inject to inject
- *  all your sass files automatically
- */
+@media only screen and (min-width:641px) and (max-width: 768px){
+.middle_content_CUPON_left {padding: 10px 20px !important; }
+.text_cupn {font-size: 16px !important; }
+.middle_content_CUPON_left span {font-size: 19px !important; }
+.middle_content_CUPON_right span {font-size: 15px !important; }
+.middle_content_CUPON_right > p {font-size: 15px !important; padding: 4px 0 !important; }
+}
+@media only screen and (min-width:760px) and (max-width: 1024px){
+.middle_content_CUPON_left span {
+  font-size: 28px !important;
+}
+}
 
-// injector
-// endinjector
+
+
+// bower:scss
+// endbower
