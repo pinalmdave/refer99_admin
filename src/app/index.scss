@@ -35,12 +35,25 @@ body {margin: 0px; padding: 0px; }
 .piza_coupon {background: rgba(0, 0, 0, 0) url("../img/Rectangle@2x.png") no-repeat scroll center top; height: 600px; text-align: center; }
 .butn button{ background: #00cb87; border: 1px solid #00cb87; color: #FFF; width: 130px; padding: 8px 20px; margin: 10px 10px 10px 5px;  text-align: center;}
 .through h4{  font-size: 18px; margin: 0px; padding: 10px 0px 10px 0px; }
-.submit_btn{ margin: 15px 0px 30px 0px; }
-.submit_btn input{ border:1px solid #b1b1b1; height: 37px; padding: 4px 0px; color: #333; width: 300px; }
+.submit_btn input{ border:1px solid #b1b1b1; height: 37px; padding: 4px 6px; color: #333; width: 300px; }
 .submit_btn button{background: #00cb87; border: 1px solid #00cb87; color: #FFF; width: 130px; padding: 8px 20px; margin: 10px 10px 10px 5px;  text-align: center;  }
 .submit_btn select{ background: #f1f1f1; color: #333; width: 150px;  border: 1px solid #b1b1b1; padding: 4px 0px; height: 37px; }
 .left_textAlign{ text-align: left !important; }
 .center_textAlign{ text-align: center !important; }
+select.ADD_NUMBER_DROP { float: left; margin-bottom: -1px; width: 23%; }
+.through {float: left; width: 100%; }
+.butn {float: left; width: 100%; }
+.butn button {background: #00cb87 none repeat scroll 0 0; border: 1px solid #00cb87; color: #fff; float: left; font-size: 21px; margin: 0 10px 10px 0; padding: 12px 0; text-align: center; width: 49%; }
+.PHONE_NO_ADDD {float: left; margin-bottom: 25px; width: 77%; }
+.EAMIll_ADDD {float: left; margin: 0 0 25px; width: 100%; }
+.submit_btn {float: left; margin: 15px 0 30px; width: 100%; }
+.PHONE_NO_ADDD input {border: 1px solid #b1b1b1; color: #333; height: 37px; padding: 4px 6px; width: 100% }
+.EAMIll_ADDD input {border: 1px solid #b1b1b1; color: #333; height: 37px; padding: 4px 6px; width: 100% }
+.butn button:nth-child(2) {margin: 0; width: 49%; }
+.containerhghg {
+  padding: 0 23%;
+}
+
 /*.get_one h1 {color: #333333; font-size: 50px; font-weight: normal; line-height: 51px; margin: 0; padding: 34px 0 0 10px; text-align: left; text-transform: uppercase;
 }*/
 
@@ -60,6 +73,18 @@ body {margin: 0px; padding: 0px; }
 .terms {font-size: 13px !important; padding: 0 !important; }
 .terms span {font-size: 16px !important; }
 .top_hder {margin: 10px 0 !important; }
+
+.butn button {
+  font-size: 16px;
+  width: 46%;
+}
+.submit_btn {
+  margin: 15px 0 0;
+}
+.containerhghg {
+  padding: 0 0%;
+}
+
 }
 @media(min-width: 481px) and (max-width:640px) {
 .piza_coupon h5 {font-size: 15px; }
@@ -77,6 +102,16 @@ body {margin: 0px; padding: 0px; }
 .terms {font-size: 13px !important; padding: 0 !important; }
 .terms span {font-size: 16px !important; }
 .top_hder {margin: 10px 0 !important; }
+.butn button {
+  font-size: 16px;
+  width: 48%;
+}
+.submit_btn {
+  margin: 15px 0 0;
+}
+.containerhghg {
+  padding: 0 0%;
+}
 }
 
 @media only screen and (min-device-width : 360px) and (max-device-width : 730px) and (orientation : landscape){
@@ -93,6 +128,16 @@ body {margin: 0px; padding: 0px; }
 .get_one h3 {
   text-align: center !important;
 }
+.butn button {
+  font-size: 16px;
+  width: 48%;
+}
+.submit_btn {
+  margin: 15px 0 0;
+}
+.containerhghg {
+  padding: 0 0%;
+}
 
 }
 
@@ -104,11 +149,40 @@ body {margin: 0px; padding: 0px; }
 .middle_content_CUPON_left span {font-size: 19px !important; }
 .middle_content_CUPON_right span {font-size: 15px !important; }
 .middle_content_CUPON_right > p {font-size: 15px !important; padding: 4px 0 !important; }
+.butn button {
+  font-size: 16px;
+  width: 49%;
+}
+.submit_btn {
+  margin: 15px 0 0;
+}
+.butn button:nth-child(2) {
+  margin: 0;
+  width: 49%;
+}
+.containerhghg {
+  padding: 0 0%;
+}
 }
 @media only screen and (min-width:760px) and (max-width: 1024px){
 .middle_content_CUPON_left span {
   font-size: 28px !important;
 }
+.butn button:nth-child(2) {
+  margin: 0;
+  width: 49%;
+}
+.submit_btn {
+  margin: 15px 0 0;
+}
+.butn button {
+  font-size: 16px;
+  width: 49%;
+}
+.submit_btn {
+  margin: 15px 0 0;
+}
+
 }
 
 
