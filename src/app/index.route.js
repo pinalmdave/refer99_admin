@@ -45,6 +45,12 @@
         controller: 'ProfileController',
         controllerAs: 'profile'
     })
+    .state('faq', {
+        url: '/faq',
+        templateUrl: 'app/components/faq/faq.html',
+        controller: 'FaqController',
+        controllerAs: 'faq'
+    })
      .state('password', {
         url: '/password',
         templateUrl: 'app/components/password/changepassword.html',
