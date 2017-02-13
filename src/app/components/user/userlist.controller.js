@@ -19,14 +19,12 @@
 		
 		User.userlist(function(err, res) {
 			if (err) {
-				console.log('err',err);
 				if (err.data && err.data.error && err.data.error.message) {
 					userlist.errorMessage = err.data.error.message;
 				} else {
 					userlist.errorMessage = "Something Went Wrong"
 				}
 			} else {
-				console.log('res', res);
 				userlist.records = res;
 			                      
 			}
@@ -58,7 +56,6 @@ userlist.numberOfPages=function(){
 						modalInstance.close();
 					}
 					$scope.save=function(email,password,username,cpassword){
-						console.log(email,password,username,cpassword);
                          
                          if (password!=cpassword) 
                            {
@@ -112,7 +109,6 @@ userlist.numberOfPages=function(){
 						modalInstance.close();
 					}
 					$scope.updateuser=function(username,email){
-						console.log(id,username,email);
 						var data=
 						{
 							
@@ -143,7 +139,6 @@ userlist.numberOfPages=function(){
 		{
 			User.addUser(data, function(err, res) {
 				if (err) {
-					console.log('err',err);
 					if (err.data && err.data.error && err.data.error.message) {
 						userlist.errorMessage = err.data.error.message;
 						userlist.successMessage=false;
@@ -152,7 +147,6 @@ userlist.numberOfPages=function(){
 						userlist.successMessage=false;
 					}
 				} else {
-					console.log('res', res);
 					userlist.records.push(res);
 					userlist.errorMessage = false;
 				    userlist.successMessage="User Added Successfully";
@@ -167,7 +161,6 @@ userlist.numberOfPages=function(){
 			User.updateUser(id,data, function(err, res) {
 				if (err) 
 				{
-					console.log('err',err);
 					if (err.data && err.data.error && err.data.error.message) {
 						userlist.errorMessage = err.data.error.message;
 						userlist.successMessage=false;
@@ -177,7 +170,6 @@ userlist.numberOfPages=function(){
 					}
 				} else 
 				{
-					console.log('res', res);
 					userlist.records[index]={id:id,email:data.email,username:data.username};
 					userlist.successMessage="User Updated Successfully";
 					userlist.errorMessage = false;
@@ -193,7 +185,6 @@ userlist.numberOfPages=function(){
 			    {
 				     User.deleteUser(id, function(err, res) {
 					if (err) {
-						console.log('err',err);
 						if (err.data && err.data.error && err.data.error.message) {
 							userlist.errorMessage = err.data.error.message;
 							userlist.successMessage=false;
@@ -202,7 +193,6 @@ userlist.numberOfPages=function(){
 							userlist.successMessage=false;
 						}
 					} else {
-						console.log('res', res);
 						userlist.records.splice(index,1);
 						userlist.successMessage="User Deleted Successfully";
 						userlist.errorMessage=false;

@@ -15,10 +15,8 @@
 				      confirm:confirmNewPassword,
 				      resetPasswordToken:resetPasswordToken
 			         };
-			         console.log(data);
 			User.resetPassword(data, function(err, res) {
 				if (err) {
-					console.log('err',err);
 					if (err.data && err.data.error && err.data.error.message) {
 						resetpassword.errorMessage = err.data.error.message;
 						resetpassword.successMessage =false;
@@ -27,7 +25,6 @@
 						resetpassword.successMessage =false;
 					}
 				} else {
-					console.log('res', res);
 					resetpassword.successMessage = "Password Changed Successfully";
 					resetpassword.errorMessage =false;
 

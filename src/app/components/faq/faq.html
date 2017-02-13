@@ -1,48 +1,27 @@
 <div>
     <acme-navbar />
 </div>
-
 <section>
-	<div class="container">
-		<div class="row">
-			<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
-				
-<h2>Animated Accordion</h2>
-<p>Click on the buttons to open the collapsible content.</p>
-
-<button class="accordion"><span class="user">User Name....</span> <span class="catogry">Category</span></button>
-<div class="panel">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-  <a href="#" class="one">Button</a> <a href="#" class="two">Button</a>
-</div>
-
-<button class="back accordion"><span class="user">User Name</span> <span class="catogry">Category</span></button>
-<div class="panel">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <a href="#" class="one">Button</a> <a href="#" class="two">Button</a>
-
-</div>
-
-<button class="accordion"><span class="user">User Name</span> <span class="catogry">Category</span></button>
-<div class="panel">
-  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <a href="#" class="one">Button</a> <a href="#" class="two">Button</a>
-
-</div>       
-      
-    
-    <!--/panel-group-->
-
-
-			</div>
-		</div>
-	</div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                <h2>FAQ's</h2>
+                <!-- <p>Click on the buttons to open the collapsible content.</p> -->
+                <div ng-repeat="item in faq.faqs">
+                    <button class="accordion"><span class="user">User Name: {{item.members.username}}</span> <span class="catogry">Category: {{item.category}}</span></button>
+                    <div class="panel">
+                        <p>{{item.description}}</p>
+                        <a href ng-class="{true:'one',false:'two'}[item.status]" ng-click="updateFaqStatus(item.id,false)">Open</a><a href ng-class="{true:'two',false:'one'}[item.status]" ng-click="updateFaqStatus(item.id,true)">Closed</a> 
+                    </div>
+                </div>
+                <!--/panel-group-->
+            </div>
+        </div>
+    </div>
 </section>
-
 <div>
-    <acme-footer /> 
+    <acme-footer />
 </div>
-
 <style>
 button.accordion {
     background-color: #00CB87;
@@ -59,35 +38,35 @@ button.accordion {
     border-radius: 4px;
 }
 
-
-button.accordion.active, button.accordion:hover {
+button.accordion.active,
+button.accordion:hover {
     background-color: #00CB87;
 }
 
 .back {
-	background-color: #FF3B69!important;
-	border:1px solid #FF3B69!important;
-
+    background-color: #FF3B69!important;
+    border: 1px solid #FF3B69!important;
 }
 
-.user{
-	font-size: 15px;
-	float: left;
-	padding: 0px 20px 0px 100px;
+.user {
+    font-size: 15px;
+    float: left;
+    padding: 0px 20px 0px 100px;
 }
 
-.catogry{
-	font-size: 15px;
-	float: right;
-	padding: 0px 100px 0px 20px;
+.catogry {
+    font-size: 15px;
+    float: right;
+    padding: 0px 100px 0px 20px;
 }
 
 div.panel {
     padding: 0 18px;
-    background-color: white;
-    max-height: 0px;
-    overflow: hidden;
-    transition: max-height 0.2s ease-out;
+    background-color: #f2f2f2;
+    float: left;
+    padding: 8px 20px;
+    /* max-height: 0px; */
+    width: 100%;
 }
 
 .panel p {
@@ -96,53 +75,53 @@ div.panel {
     padding: 10px 0px 0px 0px;
 }
 
-a.one{
-	background: #5B5A63;
-	font-size: 14px;
-	text-align: center;
-	padding: 11px 30px;
-	float: left;
-	color: #FFF;
-	margin:0px 10px 10px 10px; 
-	border-radius: 4px;
-	text-decoration: none;
-	height: 40px;
-
+a.one {
+    background: #5B5A63;
+    font-size: 14px;
+    text-align: center;
+    padding: 11px 30px;
+    float: left;
+    color: #FFF;
+    margin: 0px 10px 10px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    height: 40px;
 }
-a.one:hover{ 
-text-decoration: none;}
 
-a.two{
-	background: #FF3B69;
-	font-size: 14px;
-	text-align: center;
-	padding: 11px 30px;
-	float: left;
-	color: #FFF;
-	margin:0px 10px 10px 10px; 
-	border-radius: 4px;
-	text-decoration: none;
-	height: 40px;
-
+a.one:hover {
+    text-decoration: none;
 }
-a.two:hover{ 
-text-decoration: none;}
+
+a.two {
+    background: #FF3B69;
+    font-size: 14px;
+    text-align: center;
+    padding: 11px 30px;
+    float: left;
+    color: #FFF;
+    margin: 0px 10px 10px 10px;
+    border-radius: 4px;
+    text-decoration: none;
+    height: 40px;
+}
+
+a.two:hover {
+    text-decoration: none;
+}
 </style>
-
-
 <script>
 var acc = document.getElementsByClassName("accordion");
 var i;
 
 for (i = 0; i < acc.length; i++) {
-  acc[i].onclick = function() {
-    this.classList.toggle("active");
-    var panel = this.nextElementSibling;
-    if (panel.style.maxHeight){
-  	  panel.style.maxHeight = null;
-    } else {
-  	  panel.style.maxHeight = panel.scrollHeight + "px";
-    } 
-  }
+    acc[i].onclick = function() {
+        this.classList.toggle("active");
+        var panel = this.nextElementSibling;
+        if (panel.style.maxHeight) {
+            panel.style.maxHeight = null;
+        } else {
+            panel.style.maxHeight = panel.scrollHeight + "px";
+        }
+    }
 }
 </script>

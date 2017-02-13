@@ -13,14 +13,12 @@
         var filter={"filter":{"include":"customers"}};
 		Couponlist.couponlist(filter,function(err, res) {
 			if (err) {
-				console.log('err',err);
 				if (err.data && err.data.error && err.data.error.message) {
 					couponlist.errorMessage = err.data.error.message;
 				} else {
 					couponlist.errorMessage = "Something Went Wrong"
 				}
 			} else {
-				console.log('res', res);
 				couponlist.records = res;
 			}
 		});
@@ -43,7 +41,6 @@
 			    {
 				     Couponlist.deleteCoupon(id, function(err, res) {
 					if (err) {
-						console.log('err',err);
 						if (err.data && err.data.error && err.data.error.message) {
 							couponlist.errorMessage = err.data.error.message;
 							couponlist.successMessage=false;
@@ -52,7 +49,6 @@
 							couponlist.successMessage=false;
 						}
 					} else {
-						console.log('res', res);
 						couponlist.records.splice(index,1);
 						couponlist.successMessage = "Coupon Deleted Successfully";
 						couponlist.errorMessage=false;

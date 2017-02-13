@@ -25,7 +25,6 @@
       var vm = this;
       var user = Storage.getUser();
       (function init() {
-        // console.log('state',$state);
         vm.onState = $state;
 
 

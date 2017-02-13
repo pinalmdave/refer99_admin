@@ -27,11 +27,9 @@
 						};
 
 						
-						console.log(user.userId);
 
 			User.change_password(data, function(err, res) {
 				if (err) {
-					console.log('err',err);
 					if (err.data && err.data.error && err.data.error.message) {
 						password.errorMessage = err.data.error.message;
 						password.successMessage=false;
@@ -42,7 +40,6 @@
 						// alert(password.errorMessage);
 					}
 				} else {
-					console.log('res', res);
 					password.successMessage = "Password Changed Successfully";
 					password.errorMessage = false;
 					// alert("Password Changed Successfully");

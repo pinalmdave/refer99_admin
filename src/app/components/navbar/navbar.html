@@ -10,6 +10,7 @@
             <ul class="nav navbar-nav" ng-if="vm.user">
                 <li ng-class="{'home':'active'}[vm.onState.current.name]"><a ng-href="#/" ng-click="vm.onState='home'">Home</a></li>
                 <li ng-class="{'user':'active'}[vm.onState.current.name]"><a href="#/user">Users</a></li>
+                <li ng-class="{'faq':'active'}[vm.onState.current.name]"><a href="#/faq">FAQ</a></li>
             </ul>
             <ul class="nav navbar-nav navbar-left">
                 <li class="dropdown" ng-class="{'coupon':'active'}[vm.onState.current.name]">

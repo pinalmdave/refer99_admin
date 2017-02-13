@@ -8,7 +8,6 @@
 	function GeneratecouponController($scope,Generatecoupon,$location,$uibModal, $log, $document, $stateParams) {
 		var generatecoupon=this;
 		var cp_id=$stateParams.cp_id;
-		console.log(cp_id);
 		generatecoupon.generateCoupon = function (email,contact) {
                
                if(!email && !contact)
@@ -24,11 +23,9 @@
 							email: email,
 							contact: contact
 						};
-             console.log(data);
 		 
 		  Generatecoupon.generateCoupon(data, function(err, res) {
 				if (err) {
-					console.log('err',err);
 					if (err.data && err.data.error && err.data.error.message) {
 						generatecoupon.errorMessage = err.data.error.message;
 						generatecoupon.successMessage=false;
@@ -37,7 +34,6 @@
 						generatecoupon.successMessage=false;
 					}
 				} else {
-					console.log('res', res);
 					
 					generatecoupon.errorMessage = false;
 				    generatecoupon.successMessage="Coupon generated Successfully";

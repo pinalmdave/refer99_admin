@@ -102,7 +102,6 @@
             /*Notification.registerDevice(function() {
               thisVar.addDeviceToken(function(err, user) {
                 if (err) {
-                  console.log('err #getUser @User.Service.js: ', err);
                 }
               });
               // do nothing
@@ -209,6 +208,20 @@
           return next(error, null);
         });
     };
+    this.updateFaq = function(id, data, next) {
+      Restangular
+        .one('faqs')
+        .one(id)
+        .customPUT(data)
+        /*.get()*/
+        .then(function(res) {
+          // do on success
+          return next(null, res.plain());
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
 
     this.deleteUser = function(id, next) {
       Restangular
@@ -225,7 +238,6 @@
     };
 
     this.forgotpassword = function(email, next) {
-      console.log(email);
       Restangular
         .one('members')
         //.all('login')
@@ -248,6 +260,24 @@
       Restangular
         .one('campaigns')
         .one(id)
+        .get(options)
+        .then(function(data) {
+          // do on success
+          return next(null, data.plain());
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
+    this.getFaqs = function(next) {
+      var options = {
+        filter: {
+          "include": "members",
+          "order":"created desc"
+        }
+      };
+      Restangular
+        .one('faqs')
         .get(options)
         .then(function(data) {
           // do on success
