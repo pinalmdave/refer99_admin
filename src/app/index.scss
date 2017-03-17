@@ -13,7 +13,7 @@ $icon-font-path: "../../bower_components/bootstrap-sass-official/assets/fonts/bo
 
 // bower:scss
 // endbower
-.privacy_a {background: #f9f9f9; height: 295px; padding: 10px; border-color: #fff; overflow: hidden !important; box-shadow: 0 1px 8px 0 rgba(235, 235, 235, .4)!important; }
+.get button {background: #3A5999; border: 1px solid #3A5999; color: #FFF; font-size: 18px; text-align: center; padding: 0px 0px; height: 41px; width: 100% !important; margin: 0px 0px 0px 0px; letter-spacing: 1px; font-weight: 300; font-family: 'Open Sans', sans-serif; } .privacy_a {background: #f9f9f9; height: 295px; padding: 10px; border-color: #fff; overflow: hidden !important; box-shadow: 0 1px 8px 0 rgba(235, 235, 235, .4)!important; }
 .privacy_a p {font-size: 13px!important; padding: 5px; margin: 0px; line-height: 23px; }
 .privacy_b {background: #f9f9f9; height: 295px; padding: 10px; border-color: #fff; overflow: hidden !important; box-shadow: 0 1px 8px 0 rgba(235, 235, 235, 0.4)!important; }
 .privacy_b p {font-size: 13px!important; padding: 5px; margin: 0px; line-height: 23px; }
@@ -46,7 +46,7 @@ select.ADD_NUMBER_DROP { float: left; margin-bottom: -1px; width: 23%; }
 .butn button {background: #00cb87 none repeat scroll 0 0; border: 1px solid #00cb87; color: #fff; float: left; font-size: 21px; margin: 0 10px 10px 0; padding: 12px 0; text-align: center; width: 49%; }
 .PHONE_NO_ADDD {float: left; margin-bottom: 25px; width: 77%; }
 .EAMIll_ADDD {float: left; margin: 0 0 25px; width: 100%; }
-.submit_btn {float: left; margin: 15px 0 30px; width: 100%; }
+.submit_btn {float: left; margin: 15px 0 5px; width: 100%; }
 .PHONE_NO_ADDD input {border: 1px solid #b1b1b1; color: #333; height: 37px; padding: 4px 6px; width: 100% }
 .EAMIll_ADDD input {border: 1px solid #b1b1b1; color: #333; height: 37px; padding: 4px 6px; width: 100% }
 .butn button:nth-child(2) {margin: 0; width: 49%; }
@@ -56,6 +56,8 @@ select.ADD_NUMBER_DROP { float: left; margin-bottom: -1px; width: 23%; }
 
 /*.get_one h1 {color: #333333; font-size: 50px; font-weight: normal; line-height: 51px; margin: 0; padding: 34px 0 0 10px; text-align: left; text-transform: uppercase;
 }*/
+
+.shar_FB_BTn{display: block; text-align: center; background: #3A5999; border: 1px solid #ccc; padding: 10px 30px; margin: auto; color: #fff; font-size: 20px;}
 
 @media(min-width: 300px) and (max-width:480px) {
 .piza_coupon h5 {font-size: 15px; }
@@ -185,7 +187,138 @@ select.ADD_NUMBER_DROP { float: left; margin-bottom: -1px; width: 23%; }
 
 }
 
+/*@import url(http://fonts.googleapis.com/css?family=Raleway+Dots);
+@import url(http://fonts.googleapis.com/css?family=Advent+Pro:400,200,700);
+@import url(http://weloveiconfonts.com/api/?family=entypo);
 
 
+[class*="entypo-"]:before {
+    font-family: 'entypo', sans-serif;
+}
+
+section #services {
+    text-align: center;
+    transform: translatez(0);
+}
+
+section #services h2 {
+    margin: 80px 0px 40px;
+    color: #fff;
+    font-size: 2.4em;
+    font-family: 'Raleway Dots', sans-serif;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+section #services li {
+    width: 95px;
+    height: 100px;
+    display: inline-block;
+    border-radius: 14px;
+    margin: 20px;
+    list-style: none;
+    border: 1px solid #ccc;
+}
+
+section #services li a {
+    text-decoration: none;
+}
+
+section #services li div {
+    width: 95px;
+    height: 100px;
+    color: #74d4b3;
+    font-size: 3.4em;
+    text-align: center;
+    line-height: 100px;
+    background-color: transparent;
+    transition: all 0.5s ease;
+}
+
+section #services li div:hover {
+    transform: rotate(360deg);
+    border-radius: 100px;
+}
+
+section #services li span {
+    width: 120px;
+    height: 20px;
+    display: block;
+    padding: 15px 0px;
+    color: #fff;
+    font-family: 'Advent Pro', sans-serif;
+    text-transform: uppercase;
+    font-size: 1.2em;
+    text-align: center;
+}*/
+    .SECOND_SCREEn_fixed {
+    /*position: fixed !important;*/
+    top: 0px !important;
+    bottom: 0;
+    width: 100%;
+}
+.Offer_BG_SCREEN {background: #f2f2f2 !important; }
+.OFFER_CUPEN_img {width: 100%; text-align: center; padding: 0px 0; display: block; }
+.OFFER_CUPEN_img > img {max-width: 100%; }
+.SECOND_SCREEn .OFFER_CUPEN_img > img {max-width: 35%; }
+.Offer_ZONE_CONTr {padding: 0 7%; }
+.OFER_COUPEN {text-align: center; padding: 25px 0; font-size: 22px; font-weight: 100; line-height: 30px; }
+.SECOND_SCREEn .OFER_COUPEN {
+    text-align: center;
+    padding: 13px 0;
+    font-size: 20px;
+    font-weight: 400;
+    line-height: 30px;
+}
+
+.SECOND_SCREEn .OFER_COUPEN_normal {text-align: center; padding: 15px 0; font-size: 18px; font-weight: 400; line-height: 28px; }
+.SECOND_SCREEn {
+    margin-bottom: 20px;
+}
+
+.OFER_COUPEN_normal {text-align: center; padding: 25px 0; font-size: 18px; font-weight: 100; line-height: 28px; }
+.OFFER_CUPEN_CODE {text-align: center; background: #fff; border: 1px double #ccc; color: #000 !important; padding: 5px 0; font-size: 18px; font-weight: 600; line-height: 26px; }
+.OFFER_PGE_FOOTER {
+    background: #257fe0 !important;
+    color: #fff !important;
+    width: 100%;
+    min-height: 40px;
+    position: fixed !important;
+    bottom: 0px !important;
+}
+
+.OFFER_PGE_FOOTER_tittle {
+    color: #fff !important;
+    font-weight: 500;
+    font-size: 20px !important;
+    line-height: 40px;
+}
+.Offer_ZONE_CONTr .card,
+.list-inset {overflow: hidden; margin: 20px 0px !important; border-radius: 2px; background-color: #fff; }
+.REFERAL_SEND_LISTING_peNAL {background: #fff; float: left; width: 100%; margin-top: 0px; }
+h3.INVIT_FRNDS {background: #939393; color: #fff; padding: 10px 15px; text-align: left; float: left; margin: 24px 0 0 0; font-size: 19px; font-weight: 100; width: 100%; }
+h3.INVIT_FRNDS_let {background: #939393; color: #fff; padding: 10px 15px; text-align: left; float: left; margin: 0; font-size: 19px; font-weight: 100; width: 100%; }
+a.REFER_SEND_ICON_penal {padding: 10px 12px; display: inline-block; float: left; width: 100%; border-bottom: 1px double #ccc; }
+.REFERAL_SEND_LISTING {margin-bottom: 0px; float: left; width: 100%;     /*position: fixed !important;    bottom: 0px !important;*/ }
+.REFER_SEND_ICON_next {float: right; width: 30px; height: 30px; padding: 7px 0; }
+.REFER_SEND_text {padding: 5px 0; font-size: 14px; color: #000; display: inline-block; }
+.REFER_SEND_ICON {float: left; height: 30px; width: 37px; }
+.Offer_ZONE_CONTr1 .card,
+.list-inset {overflow: hidden; margin: 20px 0px; border-radius: 2px; background-color: #fff; }
+.Offer_ZONE_CONTr1 .card {padding-top: 1px; padding-bottom: 1px; box-shadow: 0 0px 0px rgba(0, 0, 0, 0.3); }
+.OFER_COUPEN_question {font-size: 14px; border-bottom: 0px solid #ccc; color: #fff; margin: 20px 0; padding: 10px 8px; background: #ff3b69; }
+.Offer_ZONE_CONTr .item {border-color: #ccc; background-color: #fff; color: #535353; position: relative; z-index: 2; display: block; margin: -1px; padding: 9px 8px; border-width: 1px; border-style: solid; font-size: 14px; }
+.Offer_ZONE_CONTr .item-checkbox .checkbox {position: absolute; top: 50%; right: 8px; left: inherit; z-index: 3; margin-top: -21px; width: 13%; }
+.Offer_ZONE_CONTr .checkbox input,
+.checkbox-icon {position: relative; width: 20px; height: 20px; display: block; border: 0; background: transparent; cursor: pointer; -webkit-appearance: none; }
+.Offer_ZONE_CONTr .checkbox input:after,
+.checkbox-icon:after {-webkit-transition: opacity 0.05s ease-in-out; transition: opacity 0.05s ease-in-out; -webkit-transform: rotate(-45deg); transform: rotate(-45deg); position: absolute; top: 33%; left: 25%; display: table; width: 9px; height: 6px; border: 1px solid #fff; border-top: 0; border-right: 0; content: ' '; opacity: 0; }
+.Offer_ZONE_CONTr .item-content.disable-pointer-events {display: block; clear: both; width: 87%; }
+.Discount_TYpe {
+    padding: 1px 8px !important;
+}
+.rm_border {
+border-top: 0px !important;
+}
 // bower:scss
 // endbower

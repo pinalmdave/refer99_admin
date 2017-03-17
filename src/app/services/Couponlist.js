@@ -49,6 +49,20 @@
         });
     };
 
+    this.process_coupon_generate = function(data,next) {
+      Restangular
+        .one('coupons')
+        .one('process_coupon_generate')
+        .get(data)
+        .then(function(data) {
+          // do on success
+          return next(null, data.plain());
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
+
     this.deleteCoupon = function(id,next) {
       Restangular
         .one('coupons')

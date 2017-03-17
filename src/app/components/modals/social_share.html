@@ -1,0 +1,106 @@
+<div class="modal-demo">
+    <form class="user-container" name="editUser">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" ng-click="close()" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Share on social media</h4>
+            </div>
+            <!--   <div class="modal-body">
+                <p class="text-center">Your coupon code is {{m_sharecoupon.coupon_data.c_code}}</p>
+                <section>
+                    <ul id='services'>
+                        <li>
+                            <a href socialshare socialshare-provider="facebook" socialshare-caption="refer99 Coupon Share" socialshare-description="{{m_sharecoupon.description}}" socialshare-hashtags="refer,refer99" socialshare-url="{{m_sharecoupon.shareurl}}" socialshare-type="feed" socialshare-via="1178098532304502" socialshare-media="{{m_sharecoupon.business_logo}}">
+                                <div class='entypo-facebook'></div>
+                                <span>Facebook</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href socialshare socialshare-provider="twitter" socialshare-text="refer99 Coupon Share" socialshare-hashtags="refer,refer99" socialshare-url="{{m_sharecoupon.shareurl}}">
+                                <div class='entypo-twitter'></div>
+                                <span>Twitter</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href socialshare socialshare-provider="google" socialshare-url="{{m_sharecoupon.shareurl}}">
+                                <div class='entypo-gplus'></div>
+                                <span>Google Plus</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href socialshare socialshare-provider="linkedin" socialshare-text="{{m_sharecoupon.description}}"  socialshare-url="{{m_sharecoupon.shareurl}}" socialshare-source="http://refer99.com">
+                                <div class='entypo-linkedin'></div>
+                                <span>LinkedIn</span>
+                            </a>
+                        </li>
+                    </ul>
+                </section>
+            </div> -->
+            <div class="modal-body">
+                <div class="SECOND_SCREEn_fixed">
+                    <div class="Offer_ZONE_CONTr SECOND_SCREEn">
+                        <div class="OFER_COUPEN">{{m_sharecoupon.camp_data.cp_offer}}</div>
+                        <div class="OFFER_CUPEN_img"><img src="img/ic_coupon_active@3x.png"></div>
+                    </div>
+                    <div class="Offer_ZONE_CONTr SECOND_SCREEn">
+                        <div class="OFER_COUPEN_normal">Share Your Coupon</div>
+                        <div class="OFFER_CUPEN_CODE">{{m_sharecoupon.coupon_data.c_code ? m_sharecoupon.coupon_data.c_code : "XXXXXX"}}</div>
+                    </div>
+                </div>
+                <div class="Offer_ZONE_CONTr1 REFERAL_SEND_LISTING">
+                    <h3 class="INVIT_FRNDS">Start Inviting Friends</h3>
+                    <div class="REFERAL_SEND_LISTING_peNAL">
+                        <a ng-if="!m_sharecoupon._isNotMobile" class="REFER_SEND_ICON_penal" href socialshare socialshare-provider="whatsapp" socialshare-text="{{m_sharecoupon.camp_data.cp_offer}}" socialshare-url="{{' '+m_sharecoupon.shareurl}}">
+                            <div class="REFER_SEND_ICON"><img src="img/whatsapp_icon.png"></div>
+                            <div class="REFER_SEND_text">WhatsApp</div>
+                            <div class="REFER_SEND_ICON_next"><img src="img/next_icon.png"></div>
+                        </a>
+                        <a ng-if="!m_sharecoupon._isNotMobile" class="REFER_SEND_ICON_penal" href socialshare socialshare-provider="facebook-messenger" socialshare-url="{{m_sharecoupon.shareurl}}">
+                            <div class="REFER_SEND_ICON"><img src="img/messenger_icon.png"></div>
+                            <div class="REFER_SEND_text">Messenger</div>
+                            <div class="REFER_SEND_ICON_next"><img src="img/next_icon.png"></div>
+                        </a>
+                        <a class="REFER_SEND_ICON_penal" href socialshare socialshare-provider="google" socialshare-url="{{m_sharecoupon.shareurl}}">
+                            <div class="REFER_SEND_ICON"><img src="img/gplus_icon.png"></div>
+                            <div class="REFER_SEND_text">Google Plus</div>
+                            <div class="REFER_SEND_ICON_next"><img src="img/next_icon.png"></div>
+                        </a>
+                          <a class="REFER_SEND_ICON_penal" href socialshare socialshare-provider="linkedin" socialshare-text="{{m_sharecoupon.description}}"  socialshare-url="{{m_sharecoupon.shareurl}}" socialshare-source="http://refer99.com">
+                            <div class="REFER_SEND_ICON"><img src="img/linkedin_icon.png"></div>
+                            <div class="REFER_SEND_text">Linkedin</div>
+                            <div class="REFER_SEND_ICON_next"><img src="img/next_icon.png"></div>
+                        </a>
+                         <a class="REFER_SEND_ICON_penal" href socialshare socialshare-provider="pinterest" socialshare-text="refer99 Coupon Share {{m_sharecoupon.camp_data.cp_offer}}" socialshare-url="{{m_sharecoupon.shareurl}}" socialshare-media="{{m_sharecoupon.business_logo}}">
+                            <div class="REFER_SEND_ICON"><img src="img/pinterest_icon.png"></div>
+                            <div class="REFER_SEND_text">Pinterest</div>
+                            <div class="REFER_SEND_ICON_next"><img src="img/next_icon.png"></div>
+                        </a>
+                        <a class="REFER_SEND_ICON_penal" href socialshare socialshare-provider="email" socialshare-subject="{{'Exclusive offer from '+m_sharecoupon.camp_data.members.business_name+' : '+m_sharecoupon.camp_data.cp_offer}}" socialshare-body="{{'Exclusive offer from '+m_sharecoupon.camp_data.members.business_name+' : '+m_sharecoupon.camp_data.cp_offer+'.Please visit '+ m_sharecoupon.shareurl}}">
+                            <div class="REFER_SEND_ICON"><img src="img/email_icon.png"></div>
+                            <div class="REFER_SEND_text">Email</div>
+                            <div class="REFER_SEND_ICON_next"><img src="img/next_icon.png"></div>
+                        </a>
+                    </div>
+                </div>
+                <div class="Offer_ZONE_CONTr1 REFERAL_SEND_LISTING">
+                    <h3 class="INVIT_FRNDS_let">Let the world know</h3>
+                    <div class="REFERAL_SEND_LISTING_peNAL">
+                        <a class="REFER_SEND_ICON_penal" href socialshare socialshare-provider="twitter" socialshare-text="refer99 Coupon Share" socialshare-hashtags="refer,refer99" socialshare-url="{{m_sharecoupon.shareurl}}">
+                            <div class="REFER_SEND_ICON"><img src="img/twitter_icon.png"></div>
+                            <div class="REFER_SEND_text">Twitter</div>
+                            <div class="REFER_SEND_ICON_next"><img src="img/next_icon.png"></div>
+                        </a>
+                        <a class="REFER_SEND_ICON_penal" href socialshare socialshare-provider="facebook" socialshare-caption="{{m_sharecoupon.camp_data.members.business_name}}" socialshare-description="{{'Exclusive offer from '+m_sharecoupon.camp_data.members.business_name+' : '+m_sharecoupon.camp_data.cp_offer}}" socialshare-hashtags="refer,refer99" socialshare-url="{{m_sharecoupon.shareurl}}" socialshare-type="feed" socialshare-via="1178098532304502" socialshare-media="{{m_sharecoupon.business_logo}}">
+                            <div class="REFER_SEND_ICON"><img src="img/fb_share.png"></div>
+                            <div class="REFER_SEND_text">Facebook</div>
+                            <div class="REFER_SEND_ICON_next"><img src="img/next_icon.png"></div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <p class="text-center" ng-if="m_sharecoupon.camp_data.cp_share">Share your coupon with friends and family to activate your coupon.</p>
+            <p class="text-center" ng-if="m_sharecoupon.camp_data.add_discount">Share your coupon with friends and family to get additional discount of {{m_sharecoupon.camp_data.add_discount_value}}.</p>
+        </div>
+        <!-- /.modal-content -->
+    </form>
+</div>

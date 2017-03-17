@@ -20,37 +20,49 @@
                 <div class="col-md-4 col-sm-4 col-xs-12">
                     <div class="center_textAlign middle_content_CUPON_left ">
                         <p class="left_textAlign"><span>How to Activate :</span></p>
-                        <p class="text_cupn left_textAlign"><a>Click on "Facebook" button and share on facebook</a></p>
-                        <p class="text_cupn" ng-if="!sharecoupon.coupon_data">
-                            <a href ng-click="sharecoupon.onFacebook()"><img src="img/facebookicon.png"></a>
-                        </p>
+                        <p class="text_cupn left_textAlign"><a>1.Click on "Get Your Coupon" button</a></p>
+                        <p class="text_cupn left_textAlign" ng-if="sharecoupon.camp_data.cp_share"><a>2.Share on social media.</a></p>
+                        <p class="text_cupn left_textAlign" ng-if="sharecoupon.camp_data.cp_share"><a>3.Your coupon will activate when your friends share it.</a></p>
+                        <div class="row" ng-if="!sharecoupon.coupon_data">
+                            <div class="col-md-12 col-sm-12 get">
+                                <button type="button" ng-click="sharecoupon.openGetCouponModal()">Get Your Coupon</button>
+                            </div>
+                        </div>
+                         <div class="row" ng-if="sharecoupon.coupon_data">
+                            <div class="col-md-12 col-sm-12 get">
+                                <button type="button" ng-click="sharecoupon.openSocialShareModal()">Social Share</button>
+                            </div>
+                        </div>
                     </div>
+                     <p ng-if="sharecoupon.camp_data.add_discount">Note: Share your coupon with friends and family to get additional discount of {{sharecoupon.camp_data.add_discount_value}}.</p>
                 </div>
                 <div class="col-md-8 col-sm-8">
                     <div class="middle_content_CUPON_right">
-                        <p><span>OFFER</span> : {{sharecoupon.camp_data.cp_offer}}</p>
+                        <p><span>OFFER Name</span> : {{sharecoupon.camp_data.cp_name}}</p>
+                    </div>
+                    <div class="middle_content_CUPON_right">
+                        <p><span>OFFER Title</span> : {{sharecoupon.camp_data.cp_offer}}</p>
                     </div>
                     <div class="middle_content_CUPON_right">
                         <p class="fifty"><span>Code</span> : {{sharecoupon.coupon_data.c_code?sharecoupon.coupon_data.c_code:"XXXXXX"}}</p>
                         <p class="fifty"><span>Status</span> : {{sharecoupon.coupon_data.status?sharecoupon.coupon_data.status:"Not Activated"}}</p>
                     </div>
                     <div class="middle_content_CUPON_right">
-                        <p ng-if="sharecoupon.camp_data.redeemable_at=='location'"><span>Redeemable At </span>
-                            <!-- : www.google.com -->: {{sharecoupon.camp_data.business_address}},{{sharecoupon.camp_data.city}},{{sharecoupon.camp_data.state}}</p>
-                        <p ng-if="sharecoupon.camp_data.redeemable_at=='online'"><span>Redeemable At </span>
-                            <!-- : www.google.com -->: {{sharecoupon.camp_data.web_address}}</p>
+                        <p ng-if="sharecoupon.camp_data.redeemable_at=='location'"><span>Redeemable At </span> : {{sharecoupon.camp_data.business_address}},{{sharecoupon.camp_data.city}},{{sharecoupon.camp_data.state}}</p>
+                        <p ng-if="sharecoupon.camp_data.redeemable_at=='online'"><span>Redeemable At </span> : {{sharecoupon.camp_data.web_address}}</p>
+                    </div>
+                     <div class="middle_content_CUPON_right">
+                        <p><span>Additional Discount</span> : {{sharecoupon.camp_data.add_discount?sharecoupon.camp_data.add_discount_value:"None"}}</p>
                     </div>
                 </div>
+            </div>
+            <div class="alert alert-danger" ng-if="sharecoupon.errorMessage">
+                <!-- <strong>error!</strong> -->{{sharecoupon.errorMessage}}
             </div>
     </section>
     <section>
         <div class="container1">
             <div class="row top_hder middle_content_CUPON">
-                <!--                 <div class="col-md-6 col-sm-6 col-sm-12">
-                    <div class="terms">
-                        <p><span>Disclaimer :</span>{{sharecoupon.camp_data.cp_disclaimer}}</p>
-                    </div>
-                </div> -->
                 <div class="col-md-12 col-sm-12 col-sm-12">
                     <div class="terms">
                         <p><span>Terms & Conditions :</span>{{sharecoupon.camp_data.cp_terms}}</p>
@@ -59,7 +71,7 @@
             </div>
         </div>
     </section>
-    <section>
+    <!--     <section>
         <div class="containerhghg">
             <div class="row paDD_TWTY">
                 <div class="col-md-12 col-sm-12 text-center" ng-if="sharecoupon.coupon_data && !sharecoupon.sendAs">
@@ -315,7 +327,7 @@
             </div>
         </div>
         </div>
-    </section>
+    </section> -->
     <style type="text/css">
     /*reset css*/
     
@@ -700,9 +712,9 @@
         display: inline-block;
         font-size: 22px;
         font-weight: 400;
-        line-height: 30px !important;
+        line-height: 25px !important;
         margin: 1;
-        padding: 6px 0 0;
+        padding: 5px 0 0;
         width: 100%;
     }
     
