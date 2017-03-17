@@ -2,15 +2,15 @@
     <section>
         <div class="container1">
             <div class="row top_hder topup">
-                <div class="col-md-4 col-sm-4 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="logo">
                         <img ng-src="{{sharecoupon.business_logo ? sharecoupon.business_logo :'img/logo_blue.png'}}">
                     </div>
                 </div>
-                <div class="col-md-8 col-sm-8 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="get_one">
-                        <h1><span>{{sharecoupon.camp_data.business_name?sharecoupon.camp_data.business_name:sharecoupon.camp_data.cp_name}} </span></h1>
-                        <h3><strong>Special Offer Valid :</strong> {{sharecoupon.getDateFormally(sharecoupon.camp_data.start_date)}} To {{sharecoupon.getDateFormally(sharecoupon.camp_data.end_date)}}</h3>
+                        <h1><span>{{sharecoupon.camp_data.business_name?sharecoupon.camp_data.business_name:sharecoupon.camp_data.cp_name}} : {{sharecoupon.camp_data.cp_offer}}</span></h1>
+                        <!-- <h3><strong>Special Offer Valid :</strong> {{sharecoupon.getDateFormally(sharecoupon.camp_data.start_date)}} To {{sharecoupon.getDateFormally(sharecoupon.camp_data.end_date)}}</h3> -->
                     </div>
                 </div>
     </section>
@@ -37,27 +37,35 @@
                      <p ng-if="sharecoupon.camp_data.add_discount">Note: Share your coupon with friends and family to get additional discount of {{sharecoupon.camp_data.add_discount_value}}.</p>
                 </div>
                 <div class="col-md-8 col-sm-8">
-                    <div class="middle_content_CUPON_right">
-                        <p><span>OFFER Name</span> : {{sharecoupon.camp_data.cp_name}}</p>
-                    </div>
-                    <div class="middle_content_CUPON_right">
-                        <p><span>OFFER Title</span> : {{sharecoupon.camp_data.cp_offer}}</p>
-                    </div>
-                    <div class="middle_content_CUPON_right">
-                        <p class="fifty"><span>Code</span> : {{sharecoupon.coupon_data.c_code?sharecoupon.coupon_data.c_code:"XXXXXX"}}</p>
-                        <p class="fifty"><span>Status</span> : {{sharecoupon.coupon_data.status?sharecoupon.coupon_data.status:"Not Activated"}}</p>
-                    </div>
-                    <div class="middle_content_CUPON_right">
-                        <p ng-if="sharecoupon.camp_data.redeemable_at=='location'"><span>Redeemable At </span> : {{sharecoupon.camp_data.business_address}},{{sharecoupon.camp_data.city}},{{sharecoupon.camp_data.state}}</p>
-                        <p ng-if="sharecoupon.camp_data.redeemable_at=='online'"><span>Redeemable At </span> : {{sharecoupon.camp_data.web_address}}</p>
-                    </div>
-                     <div class="middle_content_CUPON_right">
-                        <p><span>Additional Discount</span> : {{sharecoupon.camp_data.add_discount?sharecoupon.camp_data.add_discount_value:"None"}}</p>
-                    </div>
+                <table class="TABLE_PENAL">
+                  <tbody>
+                        <tr>
+                            <td style="border: 1px solid #ccc; color:#f73068; font-weight:600;">Valid Till</td>
+                            <td style="border: 1px solid #ccc;">{{sharecoupon.getDateFormally(sharecoupon.camp_data.start_date)}} To {{sharecoupon.getDateFormally(sharecoupon.camp_data.end_date)}}</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ccc; color:#f73068; font-weight:600;">Coupon Code</td>
+                            <td style="border: 1px solid #ccc;">{{sharecoupon.coupon_data.c_code?sharecoupon.coupon_data.c_code:"XXXXXX"}}</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ccc; color:#f73068; font-weight:600;">Status</td>
+                            <td style="border: 1px solid #ccc;">{{sharecoupon.coupon_data.status?sharecoupon.coupon_data.status:"Not Activated"}}</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ccc; color:#f73068; font-weight:600;">Additional Discount</td>
+                            <td style="border: 1px solid #ccc;">{{sharecoupon.camp_data.add_discount?sharecoupon.camp_data.add_discount_value:"None"}}</td>
+                        </tr>
+                        <tr>
+                            <td style="border: 1px solid #ccc; color:#f73068; font-weight:600;" rowspan="2">Redeemable At</td>
+                            <td style="border: 1px solid #ccc;">{{sharecoupon.camp_data.web_address}}</td>
+                        </tr>
+
+                    </tbody>
+                </table>
                 </div>
             </div>
             <div class="alert alert-danger" ng-if="sharecoupon.errorMessage">
-                <!-- <strong>error!</strong> -->{{sharecoupon.errorMessage}}
+                {{sharecoupon.errorMessage}}
             </div>
     </section>
     <section>
@@ -493,6 +501,24 @@
         margin: 0px;
         padding: 0px;
     }
+
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td, th {
+    text-align: center;
+    font-size: 15px !important;
+    padding: 12px !important;
+    color: #2b3b4e;
+}
+td{border: 1px solid #ccc;}
+table.TABLE_PENAL {
+    margin: 10px 0;
+}
+
     
     .top_hder {
         background: #f6f6f6 none repeat scroll 0 0;
@@ -501,25 +527,28 @@
         padding: 0;
     }
     
-    .logo {
-        /*background: rgba(255, 255, 255, 1) url("hhbh.png") repeat scroll 0 0;*/
-        display: inline-block;
-        height: 110px;
-        margin: 0 auto auto;
-        overflow: hidden;
-        padding: 10px;
-        text-align: center;
-        width: 250px;
-    }
+.logo {
+    /* background: rgba(255, 255, 255, 1) url(hhbh.png) repeat scroll 0 0; */
+    /* display: inline-block; */
+    height: 165px;
+    margin: 10px auto auto;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+    width: 165px;
+    border-radius: 100%;
+    overflow: hidden;
+    border: 0px solid #f73068;
+}
     
-    .get_one h3 {
-        font-size: 19px;
-        line-height: 30px;
-        color: #000;
-        margin: 0;
-        padding: 5px 0 0 45%;
-        text-align: right;
-    }
+.get_one h3 {
+    font-size: 19px;
+    line-height: 30px;
+    color: #000;
+    margin: 0;
+    padding: 5px 0;
+    /* text-align: right; */
+}
     /*.get_one h1 {color: #333333; font-size: 50px; font-weight: normal; line-height: 51px; margin: 0; padding: 34px 0 0 10px; text-align: left; text-transform: uppercase;
 }*/
     
@@ -677,16 +706,17 @@
         margin: 0;
         padding: 3px 0 0 14px;
     }
-    
-    .get_one h1 {
-        color: #000;
-        font-size: 36px;
-        font-weight: 600;
-        margin: 10px 0 0 0;
-        padding: 0 0 0px;
-        text-align: right;
-        text-transform: capitalize;
-    }
+    .get_one{text-align: center;}
+
+.get_one h1 {
+    color: #000;
+    font-size: 36px;
+    font-weight: 600;
+    margin: 10px 0;
+    padding: 0 0 0px;
+    /* text-align: right; */
+    text-transform: capitalize;
+}
     
     .center_dumy h3 {
         color: #000000;
