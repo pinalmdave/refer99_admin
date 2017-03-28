@@ -23,7 +23,7 @@
     })();
     // console.log(sharecoupon._isNotMobile);
     (function init() {
-      User.getCampaign(cp_id, function(err, res) {
+      User.getCampaignCheck(cp_id, function(err, res) {
         if (err) {
           if (err.data && err.data.error && err.data.error.message) {
             sharecoupon.errorMessage = err.data.error.message;

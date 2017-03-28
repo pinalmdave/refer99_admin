@@ -269,11 +269,24 @@
           return next(error, null);
         });
     };
+    this.getCampaignCheck = function(id, next) {
+      Restangular
+        .one('campaigns')
+        .one('get_campaign')
+        .get({ cp_id: id })
+        .then(function(data) {
+          // do on success
+          return next(null, data.plain());
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
     this.getFaqs = function(next) {
       var options = {
         filter: {
           "include": "members",
-          "order":"created desc"
+          "order": "created desc"
         }
       };
       Restangular

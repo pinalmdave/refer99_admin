@@ -34,9 +34,9 @@
                             </div>
                         </div>
                     </div>
-                     <p ng-if="sharecoupon.camp_data.add_discount">Note: Share your coupon with friends and family to get additional discount of {{sharecoupon.camp_data.add_discount_value}}.</p>
+                 <!--     <p ng-if="sharecoupon.camp_data.add_discount">Note: Share your coupon with friends and family to get additional discount of {{sharecoupon.camp_data.add_discount_value}}.</p> -->
                 </div>
-                <div class="col-md-8 col-sm-8">
+                <div class="col-md-8 col-sm-8 col-xs-12">
                 <table class="TABLE_PENAL">
                   <tbody>
                         <tr>
@@ -57,7 +57,13 @@
                         </tr>
                         <tr>
                             <td style="border: 1px solid #ccc; color:#f73068; font-weight:600;" rowspan="2">Redeemable At</td>
-                            <td style="border: 1px solid #ccc;">{{sharecoupon.camp_data.web_address}}</td>
+                            <td style="border: 1px solid #ccc;">
+                            <div ng-if="sharecoupon.camp_data.redeemable_at=='location'">
+                                {{sharecoupon.camp_data.business_address}},{{sharecoupon.camp_data.city}},{{sharecoupon.camp_data.state}}
+                            </div>
+                            <div ng-if="sharecoupon.camp_data.redeemable_at=='online'">
+                                {{sharecoupon.camp_data.web_address}}
+                            </div></td>
                         </tr>
 
                     </tbody>
@@ -559,9 +565,11 @@ table.TABLE_PENAL {
     /*.get_one p {color: #333333; font-size: 16px; font-weight: 400; letter-spacing: 1px; padding: 3px 0 0 14px; text-align: left; } 
 */
     
-    .logo img {
-        max-width: 100%;
-    }
+  .logo img {
+    /* max-width: 100%; */
+    width: 100%;
+    height: 100%;
+}
     /*.center_dumy h3 {color: #ff3b69; font-size: 17px; margin: 0; padding: 10px 37px 0; text-align: center; font-weight: 600; letter-spacing: 1px; line-height: 28px; }*/
     
     .middle_content_CUPON {
