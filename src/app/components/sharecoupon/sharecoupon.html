@@ -17,8 +17,8 @@
     <section>
         <div class="container1">
             <div class="row top_hder middle_content_CUPON">
-                <div class="col-md-4 col-sm-4 col-xs-12">
-                    <div class="center_textAlign middle_content_CUPON_left ">
+               <!-- <div class="col-md-4 col-sm-4 col-xs-12">
+<!--                     <div class="center_textAlign middle_content_CUPON_left ">
                         <p class="left_textAlign"><span>How to Activate :</span></p>
                         <p class="text_cupn left_textAlign"><a>1.Click on "Get Your Coupon" button</a></p>
                         <p class="text_cupn left_textAlign" ng-if="sharecoupon.camp_data.cp_share"><a>2.Share on social media.</a></p>
@@ -33,31 +33,31 @@
                                 <button type="button" ng-click="sharecoupon.openSocialShareModal()">Social Share</button>
                             </div>
                         </div>
-                    </div>
+                    </div> -->
                  <!--     <p ng-if="sharecoupon.camp_data.add_discount">Note: Share your coupon with friends and family to get additional discount of {{sharecoupon.camp_data.add_discount_value}}.</p> -->
-                </div>
-                <div class="col-md-8 col-sm-8 col-xs-12">
+                <!--</div>-->
+                <div class="col-md-12 col-sm-12 col-xs-12">
                 <table class="TABLE_PENAL">
                   <tbody>
                         <tr>
-                            <td style="border: 1px solid #ccc; color:#f73068; font-weight:600;">Valid Till</td>
-                            <td style="border: 1px solid #ccc;">{{sharecoupon.getDateFormally(sharecoupon.camp_data.start_date)}} To {{sharecoupon.getDateFormally(sharecoupon.camp_data.end_date)}}</td>
+                            <td style="border: 1px solid #ccc;color: #fff;font-weight:600;background: #f73068;">Valid Till</td>
+                            <td style="border: 1px solid #ccc;background: #fff;">{{sharecoupon.getDateFormally(sharecoupon.camp_data.start_date)}} To {{sharecoupon.getDateFormally(sharecoupon.camp_data.end_date)}}</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ccc; color:#f73068; font-weight:600;">Coupon Code</td>
-                            <td style="border: 1px solid #ccc;">{{sharecoupon.coupon_data.c_code?sharecoupon.coupon_data.c_code:"XXXXXX"}}</td>
+                            <td style="border: 1px solid #ccc;color: #fff;font-weight:600;background: #f73068;">Coupon Code</td>
+                            <td style="border: 1px solid #ccc;background: #fff;">{{sharecoupon.coupon_data.c_code?sharecoupon.coupon_data.c_code:"XXXXXX"}}</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ccc; color:#f73068; font-weight:600;">Status</td>
-                            <td style="border: 1px solid #ccc;">{{sharecoupon.coupon_data.status?sharecoupon.coupon_data.status:"Not Activated"}}</td>
+                            <td style="border: 1px solid #ccc;color: #fff;font-weight:600;background: #f73068;">Status</td>
+                            <td style="border: 1px solid #ccc;background: #fff;">{{sharecoupon.coupon_data.status?sharecoupon.coupon_data.status:"Not Activated"}}</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ccc; color:#f73068; font-weight:600;">Additional Discount</td>
-                            <td style="border: 1px solid #ccc;">{{sharecoupon.camp_data.add_discount?sharecoupon.camp_data.add_discount_value:"None"}}</td>
+                            <td style="border: 1px solid #ccc;color: #fff;font-weight:600;background: #f73068;">Additional Discount</td>
+                            <td style="border: 1px solid #ccc;background: #fff;">{{sharecoupon.camp_data.add_discount?sharecoupon.camp_data.add_discount_value:"None"}}</td>
                         </tr>
                         <tr>
-                            <td style="border: 1px solid #ccc; color:#f73068; font-weight:600;" rowspan="2">Redeemable At</td>
-                            <td style="border: 1px solid #ccc;">
+                            <td style="border: 1px solid #ccc;color: #fff;font-weight:600;background: #f73068;" rowspan="2">Redeemable At</td>
+                            <td style="border: 1px solid #ccc;background: #fff;">
                             <div ng-if="sharecoupon.camp_data.redeemable_at=='location'">
                                 {{sharecoupon.camp_data.business_address}},{{sharecoupon.camp_data.city}},{{sharecoupon.camp_data.state}}
                             </div>
@@ -68,6 +68,12 @@
 
                     </tbody>
                 </table>
+                        <div class="row" ng-if="!sharecoupon.coupon_data">
+                            <div class="col-md-12 col-sm-12 get">
+                                <button type="button" ng-click="sharecoupon.openGetCouponModal()">Get Your Coupon</button>
+                            </div>
+                        </div>
+                
                 </div>
             </div>
             <div class="alert alert-danger" ng-if="sharecoupon.errorMessage">
@@ -542,7 +548,7 @@ table.TABLE_PENAL {
     padding: 0;
     text-align: center;
     width: 165px;
-    border-radius: 100%;
+/*    border-radius: 100%;*/
     overflow: hidden;
     border: 0px solid #f73068;
 }
