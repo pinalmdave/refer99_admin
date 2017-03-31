@@ -8,7 +8,7 @@
   /** @ngInject */
   function Couponlist(Restangular, Storage, $rootScope) {
     var thisVar = this;
-    this.couponlist = function(filter,next) {
+    this.couponlist = function(filter, next) {
       Restangular
         .one('coupons')
         //.all('login')
@@ -22,7 +22,7 @@
           return next(error, null);
         });
     };
-    this.getCoupon = function(id,next) {
+    this.getCoupon = function(id, next) {
       Restangular
         .one('coupons')
         .one(id)
@@ -35,7 +35,25 @@
           return next(error, null);
         });
     };
-    this.getActiveCoupon = function(data,next) {
+    this.getCouponCampaign = function(id, next) {
+      var options = {
+        filter: {
+          "include": { "relation": "campaigns", "scope": { "include": "members" } }
+        }
+      };
+      Restangular
+        .one('coupons')
+        .one(id)
+        .get(options)
+        .then(function(data) {
+          // do on success
+          return next(null, data.plain());
+        }, function(error) {
+          // do on failure
+          return next(error, null);
+        });
+    };
+    this.getActiveCoupon = function(data, next) {
       Restangular
         .one('coupons')
         .one('create_active_coupon')
@@ -49,7 +67,7 @@
         });
     };
 
-    this.process_coupon_generate = function(data,next) {
+    this.process_coupon_generate = function(data, next) {
       Restangular
         .one('coupons')
         .one('process_coupon_generate')
@@ -63,7 +81,7 @@
         });
     };
 
-    this.deleteCoupon = function(id,next) {
+    this.deleteCoupon = function(id, next) {
       Restangular
         .one('coupons')
         .one(id)
@@ -76,11 +94,11 @@
           return next(error, null);
         });
     };
-    this.activateCoupon = function(id,next) {
+    this.activateCoupon = function(id, next) {
       Restangular
         .one('coupons')
         .one(id)
-        .customPUT({status:"activated"})
+        .customPUT({ status: "activated" })
         /*.get()*/
         .then(function(res) {
           // do on success
@@ -90,7 +108,7 @@
           return next(error, null);
         });
     };
-    this.send_coupon_as_sms = function(data,next) {
+    this.send_coupon_as_sms = function(data, next) {
       Restangular
         .one('coupons')
         .one('send_coupon_as_sms')
@@ -104,7 +122,7 @@
           return next(error, null);
         });
     };
-    this.send_coupon_as_email = function(data,next) {
+    this.send_coupon_as_email = function(data, next) {
       Restangular
         .one('coupons')
         .one('send_coupon_as_email')

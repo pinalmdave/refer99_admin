@@ -4,85 +4,85 @@
             <div class="row top_hder topup">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="logo">
-                        <img ng-src="{{sharecoupon.business_logo ? sharecoupon.business_logo :'img/logo_blue.png'}}">
+                        <img ng-src="{{processcoupon.business_logo ? processcoupon.business_logo :'img/logo_blue.png'}}">
                     </div>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <div class="get_one">
-                        <h1><span>{{sharecoupon.camp_data.business_name?sharecoupon.camp_data.business_name:sharecoupon.camp_data.cp_name}} : {{sharecoupon.camp_data.cp_offer}}</span></h1>
-                        <!-- <h3><strong>Special Offer Valid :</strong> {{sharecoupon.getDateFormally(sharecoupon.camp_data.start_date)}} To {{sharecoupon.getDateFormally(sharecoupon.camp_data.end_date)}}</h3> -->
+                        <h1><span>{{processcoupon.camp_data.business_name?processcoupon.camp_data.business_name:processcoupon.camp_data.cp_name}} : {{processcoupon.camp_data.cp_offer}}</span></h1>
+                        <!-- <h3><strong>Special Offer Valid :</strong> {{processcoupon.getDateFormally(processcoupon.camp_data.start_date)}} To {{processcoupon.getDateFormally(processcoupon.camp_data.end_date)}}</h3> -->
                     </div>
                 </div>
     </section>
     <section>
         <div class="container1">
             <div class="row top_hder middle_content_CUPON">
-               <!-- <div class="col-md-4 col-sm-4 col-xs-12">
+                <!-- <div class="col-md-4 col-sm-4 col-xs-12">
 <!--                     <div class="center_textAlign middle_content_CUPON_left ">
                         <p class="left_textAlign"><span>How to Activate :</span></p>
                         <p class="text_cupn left_textAlign"><a>1.Click on "Get Your Coupon" button</a></p>
-                        <p class="text_cupn left_textAlign" ng-if="sharecoupon.camp_data.cp_share"><a>2.Share on social media.</a></p>
-                        <p class="text_cupn left_textAlign" ng-if="sharecoupon.camp_data.cp_share"><a>3.Your coupon will activate when your friends share it.</a></p>
-                        <div class="row" ng-if="!sharecoupon.coupon_data">
+                        <p class="text_cupn left_textAlign" ng-if="processcoupon.camp_data.cp_share"><a>2.Share on social media.</a></p>
+                        <p class="text_cupn left_textAlign" ng-if="processcoupon.camp_data.cp_share"><a>3.Your coupon will activate when your friends share it.</a></p>
+                        <div class="row" ng-if="!processcoupon.coupon_data">
                             <div class="col-md-12 col-sm-12 get">
-                                <button type="button" ng-click="sharecoupon.openGetCouponModal()">Get Your Coupon</button>
+                                <button type="button" ng-click="processcoupon.openGetCouponModal()">Get Your Coupon</button>
                             </div>
                         </div>
-                         <div class="row" ng-if="sharecoupon.coupon_data">
+                         <div class="row" ng-if="processcoupon.coupon_data">
                             <div class="col-md-12 col-sm-12 get">
-                                <button type="button" ng-click="sharecoupon.openSocialShareModal()">Social Share</button>
+                                <button type="button" ng-click="processcoupon.openSocialShareModal()">Social Share</button>
                             </div>
                         </div>
                     </div> -->
-                 <!--     <p ng-if="sharecoupon.camp_data.add_discount">Note: Share your coupon with friends and family to get additional discount of {{sharecoupon.camp_data.add_discount_value}}.</p> -->
+                <!--     <p ng-if="processcoupon.camp_data.add_discount">Note: Share your coupon with friends and family to get additional discount of {{processcoupon.camp_data.add_discount_value}}.</p> -->
                 <!--</div>-->
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                <table class="TABLE_PENAL">
-                  <tbody>
-                        <tr>
-                            <td style="border: 1px solid #ccc;color: #fff;font-weight:600;background: #f73068;">Validity</td>
-                            <td style="border: 1px solid #ccc;background: #fff;">{{sharecoupon.getDateFormally(sharecoupon.camp_data.start_date)}} To {{sharecoupon.getDateFormally(sharecoupon.camp_data.end_date)}}</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ccc;color: #fff;font-weight:600;background: #f73068;">Coupon Code</td>
-                            <td style="border: 1px solid #ccc;background: #fff;">{{sharecoupon.coupon_data.c_code?sharecoupon.coupon_data.c_code:"XXXXXX"}}</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ccc;color: #fff;font-weight:600;background: #f73068;">Status</td>
-                            <td style="border: 1px solid #ccc;background: #fff;">{{sharecoupon.coupon_data.status?sharecoupon.coupon_data.status:"Not Activated"}}</td>
-                        </tr>
-                        <tr ng-if="sharecoupon.camp_data.add_discount && sharecoupon.coupon_data">
-                            <td style="border: 1px solid #ccc;color: #fff;font-weight:600;background: #f73068;">Additional Discount</td>
-                            <td style="border: 1px solid #ccc;background: #fff;">{{sharecoupon.camp_data.add_discount?sharecoupon.camp_data.add_discount_value:"None"}}</td>
-                        </tr>
-                        <tr>
-                            <td style="border: 1px solid #ccc;color: #fff;font-weight:600;background: #f73068;" rowspan="2">Redeemable At</td>
-                            <td style="border: 1px solid #ccc;background: #fff;">
-                            <div ng-if="sharecoupon.camp_data.redeemable_at=='location'">
-                                {{sharecoupon.camp_data.business_address}} {{sharecoupon.camp_data.city}} {{sharecoupon.camp_data.state}} {{sharecoupon.camp_data.zip_code}}<br>
-                                {{sharecoupon.camp_data.business_address_opt?sharecoupon.camp_data.business_address_opt:""}}
-                            </div>
-                            <div ng-if="sharecoupon.camp_data.redeemable_at=='online'">
-                                {{sharecoupon.camp_data.web_address}}
-                            </div></td>
-                        </tr>
-
-                    </tbody>
-                </table>
-                        <div class="row" ng-if="!sharecoupon.coupon_data">
+                    <table class="TABLE_PENAL">
+                        <tbody>
+                            <tr>
+                                <td style="border: 1px solid #ccc;color: #fff;font-weight:600;background: #f73068;">Validity</td>
+                                <td style="border: 1px solid #ccc;background: #fff;">{{processcoupon.getDateFormally(processcoupon.camp_data.start_date)}} To {{processcoupon.getDateFormally(processcoupon.camp_data.end_date)}}</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ccc;color: #fff;font-weight:600;background: #f73068;">Coupon Code</td>
+                                <td style="border: 1px solid #ccc;background: #fff;">{{processcoupon.coupon_data.c_code?processcoupon.coupon_data.c_code:"XXXXXX"}}</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ccc;color: #fff;font-weight:600;background: #f73068;">Status</td>
+                                <td style="border: 1px solid #ccc;background: #fff;">{{processcoupon.coupon_data.status?processcoupon.coupon_data.status:"Not Activated"}}</td>
+                            </tr>
+                            <tr ng-if="processcoupon.camp_data.add_discount">
+                                <td style="border: 1px solid #ccc;color: #fff;font-weight:600;background: #f73068;">Additional Discount</td>
+                                <td style="border: 1px solid #ccc;background: #fff;">{{processcoupon.camp_data.add_discount?processcoupon.camp_data.add_discount_value:"None"}}</td>
+                            </tr>
+                            <tr>
+                                <td style="border: 1px solid #ccc;color: #fff;font-weight:600;background: #f73068;" rowspan="2">Redeemable At</td>
+                                <td style="border: 1px solid #ccc;background: #fff;">
+                                    <div ng-if="processcoupon.camp_data.redeemable_at=='location'">
+                                        {{processcoupon.camp_data.business_address}} {{processcoupon.camp_data.city}} {{processcoupon.camp_data.state}} {{processcoupon.camp_data.zip_code}}
+                                        <br> {{processcoupon.camp_data.business_address_opt?processcoupon.camp_data.business_address_opt:""}}
+                                    </div>
+                                    <div ng-if="processcoupon.camp_data.redeemable_at=='online'">
+                                        {{processcoupon.camp_data.web_address}}
+                                    </div>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <!-- <div class="row" ng-if="!processcoupon.coupon_data">
                             <div class="col-md-12 col-sm-12 get">
-                                <button type="button" ng-click="sharecoupon.openGetCouponModal()">Get Your Coupon</button>
+                                <button type="button" ng-click="processcoupon.openGetCouponModal()">Get Your Coupon</button>
                             </div>
+                        </div> -->
+                    <div class="row" ng-if="processcoupon.canShare">
+                        <div class="col-md-12 col-sm-12 get">
+                            <button type="button" ng-click="processcoupon.openSocialShareModal()">Social Share</button>
                         </div>
-                        <div class="row" ng-if="sharecoupon.coupon_data">
-                             <div class="col-md-12 col-sm-12 get">
-                                 <button type="button" ng-click="sharecoupon.openSocialShareModal()">Social Share</button>
-                             </div>
-                         </div>
+                    </div>
                 </div>
             </div>
-            <div class="alert alert-danger" ng-if="sharecoupon.errorMessage">
-                {{sharecoupon.errorMessage}}
+            <div class="alert alert-danger" ng-if="processcoupon.errorMessage">
+                {{processcoupon.errorMessage}}
             </div>
     </section>
     <section>
@@ -90,7 +90,7 @@
             <div class="row top_hder middle_content_CUPON">
                 <div class="col-md-12 col-sm-12 col-sm-12">
                     <div class="terms">
-                        <p><span>Terms & Conditions :</span>{{sharecoupon.camp_data.cp_terms}}</p>
+                        <p><span>Terms & Conditions :</span>{{processcoupon.camp_data.cp_terms}}</p>
                     </div>
                 </div>
             </div>
@@ -99,21 +99,21 @@
     <!--     <section>
         <div class="containerhghg">
             <div class="row paDD_TWTY">
-                <div class="col-md-12 col-sm-12 text-center" ng-if="sharecoupon.coupon_data && !sharecoupon.sendAs">
+                <div class="col-md-12 col-sm-12 text-center" ng-if="processcoupon.coupon_data && !processcoupon.sendAs">
                     
                     <div class="through">
                         <h4>Get coupon through</h4>
                     </div>
                     <div class="butn">
-                        <button type="button" ng-click="sharecoupon.sendAs='contact'">Text Message</button>
-                        <button type="button" ng-click="sharecoupon.sendAs='email'">Email</button>
+                        <button type="button" ng-click="processcoupon.sendAs='contact'">Text Message</button>
+                        <button type="button" ng-click="processcoupon.sendAs='email'">Email</button>
                     </div>
                 </div>
-                <div class="col-md-12 col-sm-12 text-center" ng-if="sharecoupon.sendAs=='contact'">
+                <div class="col-md-12 col-sm-12 text-center" ng-if="processcoupon.sendAs=='contact'">
                    
                     <div class="submit_btn">
                         <form class="NUMBER_ADD" name="contact_form">
-                            <select class="ADD_NUMBER_DROP" name="countryCode" ng-model="sharecoupon.countryCode">
+                            <select class="ADD_NUMBER_DROP" name="countryCode" ng-model="processcoupon.countryCode">
                                 <option value="+213">Algeria (+213)</option>
                                 <option value="+376">Andorra (+376)</option>
                                 <option value="+244">Angola (+244)</option>
@@ -329,22 +329,22 @@
                                 <option value="+263">Zimbabwe (+263)</option>
                             </select>
                             <div class="PHONE_NO_ADDD">
-                                <input type="text" ng-model="sharecoupon.contact" placeholder="Phone Number" required>
+                                <input type="text" ng-model="processcoupon.contact" placeholder="Phone Number" required>
                             </div>
                             <div class="butn">
-                                <button type="button" ng-click="contact_form.$valid && sharecoupon.send_as_sms(sharecoupon.contact)">Submit</button>
-                                <button type="button" ng-click="sharecoupon.sendAs=''">Cancel</button>
+                                <button type="button" ng-click="contact_form.$valid && processcoupon.send_as_sms(processcoupon.contact)">Submit</button>
+                                <button type="button" ng-click="processcoupon.sendAs=''">Cancel</button>
                             </div </form>
                     </div>
                 </div>
-                <div class="col-md-12 col-sm-12 text-center" ng-if="sharecoupon.sendAs=='email'">
+                <div class="col-md-12 col-sm-12 text-center" ng-if="processcoupon.sendAs=='email'">
                     
                     <div class="submit_btn">
                         <form name="email_form">
-                            <div class="EAMIll_ADDD"><input type="email" ng-model="sharecoupon.email" placeholder="Email Address" required></div>
+                            <div class="EAMIll_ADDD"><input type="email" ng-model="processcoupon.email" placeholder="Email Address" required></div>
                             <div class="butn">
-                                <button type="button" ng-click="email_form.$valid && sharecoupon.send_as_email(sharecoupon.email)">Submit</button>
-                                <button type="button" ng-click="sharecoupon.sendAs=''">Cancel</button>
+                                <button type="button" ng-click="email_form.$valid && processcoupon.send_as_email(processcoupon.email)">Submit</button>
+                                <button type="button" ng-click="processcoupon.sendAs=''">Cancel</button>
                             </div>
                         </form>
                     </div>
@@ -518,24 +518,27 @@
         margin: 0px;
         padding: 0px;
     }
-
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-td, th {
-    text-align: center;
-    font-size: 15px !important;
-    padding: 12px !important;
-    color: #2b3b4e;
-}
-td{border: 1px solid #ccc;}
-table.TABLE_PENAL {
-    margin: 10px 0;
-}
-
+    
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+    
+    td,
+    th {
+        text-align: center;
+        font-size: 15px !important;
+        padding: 12px !important;
+        color: #2b3b4e;
+    }
+    
+    td {
+        border: 1px solid #ccc;
+    }
+    
+    table.TABLE_PENAL {
+        margin: 10px 0;
+    }
     
     .top_hder {
         background: #f6f6f6 none repeat scroll 0 0;
@@ -544,28 +547,28 @@ table.TABLE_PENAL {
         padding: 0;
     }
     
-.logo {
-    /* background: rgba(255, 255, 255, 1) url(hhbh.png) repeat scroll 0 0; */
-    /* display: inline-block; */
-    height: 165px;
-    margin: 10px auto auto;
-    overflow: hidden;
-    padding: 0;
-    text-align: center;
-    width: 165px;
-/*    border-radius: 100%;*/
-    overflow: hidden;
-    border: 0px solid #f73068;
-}
+    .logo {
+        /* background: rgba(255, 255, 255, 1) url(hhbh.png) repeat scroll 0 0; */
+        /* display: inline-block; */
+        height: 165px;
+        margin: 10px auto auto;
+        overflow: hidden;
+        padding: 0;
+        text-align: center;
+        width: 165px;
+        /*    border-radius: 100%;*/
+        overflow: hidden;
+        border: 0px solid #f73068;
+    }
     
-.get_one h3 {
-    font-size: 19px;
-    line-height: 30px;
-    color: #000;
-    margin: 0;
-    padding: 5px 0;
-    /* text-align: right; */
-}
+    .get_one h3 {
+        font-size: 19px;
+        line-height: 30px;
+        color: #000;
+        margin: 0;
+        padding: 5px 0;
+        /* text-align: right; */
+    }
     /*.get_one h1 {color: #333333; font-size: 50px; font-weight: normal; line-height: 51px; margin: 0; padding: 34px 0 0 10px; text-align: left; text-transform: uppercase;
 }*/
     
@@ -576,11 +579,11 @@ table.TABLE_PENAL {
     /*.get_one p {color: #333333; font-size: 16px; font-weight: 400; letter-spacing: 1px; padding: 3px 0 0 14px; text-align: left; } 
 */
     
-  .logo img {
-    /* max-width: 100%; */
-    width: 100%;
-    height: 100%;
-}
+    .logo img {
+        /* max-width: 100%; */
+        width: 100%;
+        height: 100%;
+    }
     /*.center_dumy h3 {color: #ff3b69; font-size: 17px; margin: 0; padding: 10px 37px 0; text-align: center; font-weight: 600; letter-spacing: 1px; line-height: 28px; }*/
     
     .middle_content_CUPON {
@@ -725,17 +728,20 @@ table.TABLE_PENAL {
         margin: 0;
         padding: 3px 0 0 14px;
     }
-    .get_one{text-align: center;}
-
-.get_one h1 {
-    color: #000;
-    font-size: 36px;
-    font-weight: 600;
-    margin: 10px 0;
-    padding: 0 0 0px;
-    /* text-align: right; */
-    text-transform: capitalize;
-}
+    
+    .get_one {
+        text-align: center;
+    }
+    
+    .get_one h1 {
+        color: #000;
+        font-size: 36px;
+        font-weight: 600;
+        margin: 10px 0;
+        padding: 0 0 0px;
+        /* text-align: right; */
+        text-transform: capitalize;
+    }
     
     .center_dumy h3 {
         color: #000000;

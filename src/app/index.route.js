@@ -79,6 +79,11 @@
         templateUrl: 'app/components/sharecoupon/sharecoupon.html',
         controller: 'SharecouponController',
         controllerAs: 'sharecoupon'
+      }).state('process_ref_coupon', {
+        url: '/app/process/:c_id/coupon_process',
+        templateUrl: 'app/components/processcoupon/processcoupon.html',
+        controller: 'ProcesscouponController',
+        controllerAs: 'processcoupon'
       });
     /*  .state('generatecoupon', {
          url: '/app/:cp_id/coupon_share',

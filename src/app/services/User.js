@@ -256,7 +256,7 @@
         filter: {
           "include": "members"
         }
-      }
+      };
       Restangular
         .one('campaigns')
         .one(id)
