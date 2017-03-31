@@ -1,4 +1,4 @@
-## Angular Seed App 
+## refer99 Admin
 
 [![Build Status](https://travis-ci.org/PauloLuan/angular-gulp-seed.svg)](https://travis-ci.org/PauloLuan/angular-gulp-seed)
 [![Coverage Status](https://coveralls.io/repos/PauloLuan/angular-gulp-seed/badge.svg)](https://coveralls.io/r/PauloLuan/angular-gulp-seed) 
@@ -7,8 +7,6 @@
 
 
 This project is an application skeleton for a typical AngularJS web app. You can use it to quickly bootstrap your angular webapp projects and dev environment for these projects.
-
-The seed contains a sample AngularJS application and is preconfigured to install the Angular framework and a bunch of development and testing tools for instant web development gratification.
 
 **In This Documentation**
 
